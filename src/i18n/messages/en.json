@@ -168,6 +168,34 @@
     "editorialBody": "Fare ranges, scam patterns, and arrival notes synthesize operator publications, recurring traveler reports across public forums, and on-the-ground verification. They are honest ranges, not guarantees — conditions change faster than any database.",
     "disclaimer": "Always confirm critical departures locally. If something here is wrong or stale, it will show an old verification date — trust the date."
   },
+  "packs": {
+    "title": "Offline packs",
+    "subtitle": "Download a city before you need it. The answer engine, schedules, verified pins, and safety notes all run on your phone with zero bars.",
+    "statusReady": "Ready · downloaded {date}",
+    "statusNone": "Not downloaded",
+    "download": "Download pack",
+    "downloading": "Downloading…",
+    "update": "Update",
+    "delete": "Remove",
+    "size": "{kb} KB",
+    "testOffline": "Open offline mode",
+    "includedTitle": "What's inside",
+    "included1": "Every place, stop, and verified pin with landmark walking notes",
+    "included2": "Cached rail, tram, coach, and bus schedules with their confidence tiers",
+    "included3": "Taxi fare bands and the full safety advisory layer",
+    "included4": "The same ranking engine — answers are computed on your phone",
+    "installTitle": "Add to your home screen",
+    "installBody": "Installed web apps get protected storage on iPhone — Safari won't evict your pack between uses. In Safari: Share → Add to Home Screen. In Chrome: Install app.",
+    "downloadFailed": "Download failed — check your connection and try again."
+  },
+  "offline": {
+    "title": "Offline mode",
+    "subtitle": "Running entirely from your downloaded pack. Answers are computed on this device.",
+    "noPack": "No city pack on this device yet. Download one while you're online and this page becomes your offline compass.",
+    "goToPacks": "Go to offline packs",
+    "mapTitle": "Pack map — verified points",
+    "usingPack": "Using the {city} pack · updated {date}"
+  },
   "cityNames": {
     "marrakech": "Marrakech",
     "casablanca": "Casablanca",

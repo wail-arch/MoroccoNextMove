@@ -7,6 +7,7 @@ import { isRtlLocale, routing } from "@/i18n/routing";
 import { OfflineBanner } from "@/ui/OfflineBanner";
 import { SiteFooter } from "@/ui/SiteFooter";
 import { SiteHeader } from "@/ui/SiteHeader";
+import { SwRegister } from "@/ui/SwRegister";
 import "../globals.css";
 
 const fraunces = Fraunces({
@@ -67,6 +68,7 @@ export default async function LocaleLayout({
     >
       <body className="flex min-h-full flex-col">
         <NextIntlClientProvider>
+          <SwRegister />
           <OfflineBanner />
           <SiteHeader />
           {children}

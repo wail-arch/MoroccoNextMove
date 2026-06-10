@@ -168,6 +168,34 @@
     "editorialBody": "Les fourchettes de prix, schémas d'arnaque et notes d'arrivée synthétisent les publications des opérateurs, des signalements récurrents de voyageurs sur les forums publics et des vérifications sur place. Ce sont des fourchettes honnêtes, pas des garanties — la réalité change plus vite que n'importe quelle base de données.",
     "disclaimer": "Confirmez toujours localement les départs critiques. Si une information est fausse ou périmée, sa date de vérification sera ancienne — fiez-vous à la date."
   },
+  "packs": {
+    "title": "Packs hors ligne",
+    "subtitle": "Téléchargez une ville avant d'en avoir besoin. Le moteur de réponse, les horaires, les repères vérifiés et les notes de sécurité fonctionnent sur votre téléphone sans aucune barre de réseau.",
+    "statusReady": "Prêt · téléchargé le {date}",
+    "statusNone": "Non téléchargé",
+    "download": "Télécharger le pack",
+    "downloading": "Téléchargement…",
+    "update": "Mettre à jour",
+    "delete": "Retirer",
+    "size": "{kb} Ko",
+    "testOffline": "Ouvrir le mode hors ligne",
+    "includedTitle": "Ce qu'il contient",
+    "included1": "Tous les lieux, arrêts et repères vérifiés avec leurs notes de cheminement",
+    "included2": "Horaires train, tram, autocar et bus en cache avec leurs niveaux de confiance",
+    "included3": "Fourchettes de prix des taxis et toute la couche de sécurité",
+    "included4": "Le même moteur de classement — les réponses sont calculées sur votre téléphone",
+    "installTitle": "Ajoutez à l'écran d'accueil",
+    "installBody": "Les web apps installées ont un stockage protégé sur iPhone — Safari n'effacera pas votre pack entre deux utilisations. Dans Safari : Partager → Sur l'écran d'accueil. Dans Chrome : Installer l'application.",
+    "downloadFailed": "Échec du téléchargement — vérifiez votre connexion et réessayez."
+  },
+  "offline": {
+    "title": "Mode hors ligne",
+    "subtitle": "Fonctionne entièrement depuis votre pack téléchargé. Les réponses sont calculées sur cet appareil.",
+    "noPack": "Aucun pack ville sur cet appareil. Téléchargez-en un pendant que vous êtes en ligne et cette page deviendra votre boussole hors ligne.",
+    "goToPacks": "Voir les packs hors ligne",
+    "mapTitle": "Carte du pack — points vérifiés",
+    "usingPack": "Pack {city} · mis à jour le {date}"
+  },
   "cityNames": {
     "marrakech": "Marrakech",
     "casablanca": "Casablanca",
