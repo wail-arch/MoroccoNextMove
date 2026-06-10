@@ -1,26 +1,110 @@
 @import "tailwindcss";
 
+/*
+ * Next Move by Claude Fable — "Zellige & Terracotta" design tokens.
+ * Components must use these tokens; raw hex values in components are a lint smell.
+ */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Surfaces */
+  --plaster: #faf6ee;
+  --sand: #f1e8d8;
+  --card: #ffffff;
+
+  /* Ink */
+  --ink: #14261f;
+  --ink-muted: #5c6b61;
+  --ink-faint: #8a958c;
+  --line: rgba(20, 38, 31, 0.12);
+
+  /* Brand */
+  --zellige: #0e5a4e;
+  --zellige-strong: #0a453c;
+  --zellige-soft: #e3efeb;
+  --terracotta: #c4502f;
+  --terracotta-strong: #a8401f;
+  --terracotta-soft: #f7e5dd;
+  --saffron: #e8a33d;
+  --saffron-soft: #faf0dc;
+  --majorelle: #3155ce;
+
+  /* Confidence semantics (always paired with icon + label, never color alone) */
+  --tier-live: #1e8a5a;
+  --tier-live-soft: #e1f2e9;
+  --tier-cached: #b07a1c;
+  --tier-cached-soft: #f7ecd4;
+  --tier-estimated: #c75b39;
+  --tier-estimated-soft: #f8e7df;
+}
+
+/* Arabic pages swap the type ramp to Readex Pro (Fraunces has no Arabic glyphs). */
+html[lang="ar"] {
+  --font-display-active: var(--font-readex);
+  --font-sans-active: var(--font-readex);
+}
+
+html:not([lang="ar"]) {
+  --font-display-active: var(--font-fraunces);
+  --font-sans-active: var(--font-inter);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-plaster: var(--plaster);
+  --color-sand: var(--sand);
+  --color-card: var(--card);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-ink-faint: var(--ink-faint);
+  --color-line: var(--line);
+  --color-zellige: var(--zellige);
+  --color-zellige-strong: var(--zellige-strong);
+  --color-zellige-soft: var(--zellige-soft);
+  --color-terracotta: var(--terracotta);
+  --color-terracotta-strong: var(--terracotta-strong);
+  --color-terracotta-soft: var(--terracotta-soft);
+  --color-saffron: var(--saffron);
+  --color-saffron-soft: var(--saffron-soft);
+  --color-majorelle: var(--majorelle);
+  --color-tier-live: var(--tier-live);
+  --color-tier-live-soft: var(--tier-live-soft);
+  --color-tier-cached: var(--tier-cached);
+  --color-tier-cached-soft: var(--tier-cached-soft);
+  --color-tier-estimated: var(--tier-estimated);
+  --color-tier-estimated-soft: var(--tier-estimated-soft);
+
+  --font-display: var(--font-display-active);
+  --font-sans: var(--font-sans-active);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--plaster);
+  color: var(--ink);
+  font-family: var(--font-sans-active);
+}
+
+a,
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+:focus-visible {
+  outline: 2px solid var(--zellige);
+  outline-offset: 2px;
+}
+
+::selection {
+  background: rgba(232, 163, 61, 0.3);
 }

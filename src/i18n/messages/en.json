@@ -1,0 +1,34 @@
+{
+  "app": {
+    "name": "Next Move",
+    "fullName": "Morocco Next Move",
+    "tagline": "Know your best next move in Morocco"
+  },
+  "nav": {
+    "move": "Arrive now",
+    "plan": "Plan a route",
+    "cities": "Cities",
+    "packs": "Offline packs",
+    "saved": "Saved",
+    "sources": "Data sources",
+    "language": "Language"
+  },
+  "common": {
+    "loading": "Loading…",
+    "save": "Save",
+    "saved": "Saved",
+    "remove": "Remove",
+    "back": "Back",
+    "continue": "Continue",
+    "offlineBanner": "You're offline — showing cached data",
+    "lastVerified": "Last verified {date}",
+    "minutes": "{count, plural, one {# min} other {# min}}",
+    "free": "Free"
+  },
+  "confidence": {
+    "officialLive": "Official live data",
+    "cachedVerified": "Cached & verified",
+    "estimatedFlagged": "Estimated — check locally",
+    "legendTitle": "How confident are we?"
+  }
+}

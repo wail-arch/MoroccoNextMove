@@ -1,0 +1,34 @@
+{
+  "app": {
+    "name": "Next Move",
+    "fullName": "Morocco Next Move",
+    "tagline": "Votre meilleur prochain mouvement, partout au Maroc"
+  },
+  "nav": {
+    "move": "J'arrive maintenant",
+    "plan": "Planifier un trajet",
+    "cities": "Villes",
+    "packs": "Packs hors ligne",
+    "saved": "Enregistrés",
+    "sources": "Sources de données",
+    "language": "Langue"
+  },
+  "common": {
+    "loading": "Chargement…",
+    "save": "Enregistrer",
+    "saved": "Enregistré",
+    "remove": "Retirer",
+    "back": "Retour",
+    "continue": "Continuer",
+    "offlineBanner": "Vous êtes hors ligne — données en cache affichées",
+    "lastVerified": "Dernière vérification : {date}",
+    "minutes": "{count, plural, one {# min} other {# min}}",
+    "free": "Gratuit"
+  },
+  "confidence": {
+    "officialLive": "Données officielles en direct",
+    "cachedVerified": "En cache et vérifiées",
+    "estimatedFlagged": "Estimées — à vérifier sur place",
+    "legendTitle": "Quel est notre niveau de confiance ?"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "app": {
+    "name": "الخطوة التالية",
+    "fullName": "المغرب: الخطوة التالية",
+    "tagline": "اعرف أفضل خطوة تالية لك في المغرب"
+  },
+  "nav": {
+    "move": "وصلتُ الآن",
+    "plan": "خطّط مسارًا",
+    "cities": "المدن",
+    "packs": "حزم بدون إنترنت",
+    "saved": "المحفوظات",
+    "sources": "مصادر البيانات",
+    "language": "اللغة"
+  },
+  "common": {
+    "loading": "جارٍ التحميل…",
+    "save": "حفظ",
+    "saved": "محفوظ",
+    "remove": "إزالة",
+    "back": "رجوع",
+    "continue": "متابعة",
+    "offlineBanner": "أنت غير متصل — تُعرض بيانات مخزَّنة",
+    "lastVerified": "آخر تحقُّق: {date}",
+    "minutes": "{count, plural, one {دقيقة واحدة} two {دقيقتان} few {# دقائق} other {# دقيقة}}",
+    "free": "مجاني"
+  },
+  "confidence": {
+    "officialLive": "بيانات رسمية مباشرة",
+    "cachedVerified": "مخزَّنة ومُتحقَّق منها",
+    "estimatedFlagged": "تقديرية — تحقَّق محليًا",
+    "legendTitle": "ما مدى ثقتنا؟"
+  }
+}
