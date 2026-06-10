@@ -4,6 +4,9 @@ import { notFound } from "next/navigation";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
 import { isRtlLocale, routing } from "@/i18n/routing";
+import { OfflineBanner } from "@/ui/OfflineBanner";
+import { SiteFooter } from "@/ui/SiteFooter";
+import { SiteHeader } from "@/ui/SiteHeader";
 import "../globals.css";
 
 const fraunces = Fraunces({
@@ -63,7 +66,12 @@ export default async function LocaleLayout({
       className={`${fraunces.variable} ${inter.variable} ${readexPro.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col">
-        <NextIntlClientProvider>{children}</NextIntlClientProvider>
+        <NextIntlClientProvider>
+          <OfflineBanner />
+          <SiteHeader />
+          {children}
+          <SiteFooter />
+        </NextIntlClientProvider>
       </body>
     </html>
   );

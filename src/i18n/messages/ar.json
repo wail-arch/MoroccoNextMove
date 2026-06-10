@@ -11,7 +11,9 @@
     "packs": "حزم بدون إنترنت",
     "saved": "المحفوظات",
     "sources": "مصادر البيانات",
-    "language": "اللغة"
+    "language": "اللغة",
+    "menu": "القائمة",
+    "home": "الرئيسية"
   },
   "common": {
     "loading": "جارٍ التحميل…",
@@ -23,12 +25,113 @@
     "offlineBanner": "أنت غير متصل — تُعرض بيانات مخزَّنة",
     "lastVerified": "آخر تحقُّق: {date}",
     "minutes": "{count, plural, one {دقيقة واحدة} two {دقيقتان} few {# دقائق} other {# دقيقة}}",
-    "free": "مجاني"
+    "durationHM": "{hours} س {minutes} د",
+    "free": "مجاني",
+    "from": "من",
+    "to": "إلى",
+    "search": "بحث",
+    "today": "اليوم",
+    "transfers": "{count, plural, =0 {مباشر} one {تبديل واحد} two {تبديلان} other {# تبديلات}}"
   },
   "confidence": {
     "officialLive": "بيانات رسمية مباشرة",
     "cachedVerified": "مخزَّنة ومُتحقَّق منها",
     "estimatedFlagged": "تقديرية — تحقَّق محليًا",
-    "legendTitle": "ما مدى ثقتنا؟"
+    "legendTitle": "ما مدى ثقتنا؟",
+    "legendLive": "مباشرة من النظام الحي للمشغِّل.",
+    "legendCached": "من جداول رسمية خزّناها وراجعناها، مع تاريخ آخر تحقُّق.",
+    "legendEstimated": "مبنية على البحث وغير مؤكَّدة — اعتبرها نقطة بداية وتحقَّق ميدانيًا."
+  },
+  "modes": {
+    "walk": "مشيًا",
+    "tram": "ترامواي",
+    "train": "قطار",
+    "coach": "حافلة بين المدن",
+    "bus": "حافلة",
+    "petit-taxi": "طاكسي صغير",
+    "grand-taxi": "طاكسي كبير"
+  },
+  "payments": {
+    "card": "البطاقة مقبولة",
+    "cash": "نقدًا",
+    "cash-small-bills": "جهّز أوراقًا نقدية صغيرة",
+    "onboard": "الدفع على متن المركبة",
+    "counter": "الشراء من الشباك",
+    "app": "الدفع داخل التطبيق"
+  },
+  "reasons": {
+    "fastest": "الأسرع",
+    "cheapest": "الأرخص",
+    "fewest-transfers": "أقل تبديلات",
+    "departs-soon": "ينطلق قريبًا",
+    "works-offline": "يعمل بدون إنترنت",
+    "night-safer": "أكثر أمانًا ليلًا",
+    "avoids-night-walk": "يتجنب المشي ليلًا",
+    "short-walk": "مشي قصير",
+    "frequent-service": "خدمة متكررة",
+    "direct-route": "مباشر",
+    "verified-entrance": "مدخل مُتحقَّق منه"
+  },
+  "card": {
+    "bestNextMove": "أفضل خطوة تالية",
+    "alternative": "بديل",
+    "departs": "ينطلق {time}",
+    "arrives": "يصل {time}",
+    "whyThis": "لماذا هذا الخيار؟",
+    "hideWhy": "إخفاء الأسباب",
+    "details": "خطوة بخطوة",
+    "hideDetails": "إخفاء الخطوات",
+    "finalApproach": "الوصول الأخير",
+    "fareNote": "الأسعار نطاقات صادقة، لا وعود.",
+    "saveMove": "احفظ هذه الخطوة",
+    "savedMove": "محفوظ",
+    "noMoves": "لا يوجد خيار موثوق لهذه الرحلة الآن. جرّب نقطة انطلاق قريبة، أو راجع صفحة المدينة لإرشادات الوصول.",
+    "showAlternatives": "{count, plural, one {خيار آخر} two {خياران آخران} other {# خيارات أخرى}}"
+  },
+  "deepLinks": {
+    "bookOncf": "احجز عبر ONCF Voyages",
+    "bookCtm": "احجز عبر CTM",
+    "bookMarkoub": "قارن عبر marKoub"
+  },
+  "move": {
+    "title": "وصلتُ الآن",
+    "subtitle": "من مكانك الحالي: الخطوة التالية الأكثر أمانًا وسرعةً وتوفيرًا — بصدق كامل.",
+    "whereAreYou": "أين أنت؟",
+    "whereTo": "إلى أين تريد الذهاب؟",
+    "findMove": "اعثر على خطوتي التالية",
+    "budget": "الميزانية",
+    "budgetLean": "اقتصادية",
+    "budgetMid": "متوسطة",
+    "budgetPremium": "مريحة",
+    "timeNow": "الانطلاق الآن",
+    "pickPlace": "اختر مكانًا…",
+    "resultsFor": "الخطوات التالية من {from} إلى {to}",
+    "departureTime": "وقت الانطلاق"
+  },
+  "plan": {
+    "title": "خطّط مسارًا",
+    "subtitle": "القطارات والحافلات بين المدن في المغرب، مرتبة حسب أولوياتك، وتُحجز على موقع المشغِّل نفسه.",
+    "strategy": "الأولوية",
+    "fastest": "الأسرع",
+    "cheapest": "الأرخص",
+    "balanced": "متوازن",
+    "date": "التاريخ",
+    "findRoutes": "ابحث عن المسارات",
+    "resultsFor": "المسارات من {from} إلى {to}",
+    "noRoutes": "لا انطلاقات مجدولة بعد هذا الوقت. جرّب ساعة أبكر أو صباح الغد — فالرحلات بين المدن تقل مساءً في المغرب."
+  },
+  "saved": {
+    "title": "الخطوات المحفوظة",
+    "subtitle": "محفوظة على هذا الجهاز — تعمل بدون إنترنت.",
+    "empty": "لا شيء محفوظ بعد. احفظ خطوة من النتائج وستجدها هنا، حتى بدون اتصال.",
+    "savedAt": "حُفظت في {date}",
+    "clearAll": "إزالة الكل"
+  },
+  "a11y": {
+    "skipToContent": "تخطَّ إلى المحتوى",
+    "openMenu": "افتح القائمة",
+    "closeMenu": "أغلق القائمة",
+    "expandCard": "عرض التفاصيل",
+    "languageSwitcher": "تغيير اللغة"
   }
 }

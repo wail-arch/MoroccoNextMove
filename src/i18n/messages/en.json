@@ -11,7 +11,9 @@
     "packs": "Offline packs",
     "saved": "Saved",
     "sources": "Data sources",
-    "language": "Language"
+    "language": "Language",
+    "menu": "Menu",
+    "home": "Home"
   },
   "common": {
     "loading": "Loading…",
@@ -23,12 +25,113 @@
     "offlineBanner": "You're offline — showing cached data",
     "lastVerified": "Last verified {date}",
     "minutes": "{count, plural, one {# min} other {# min}}",
-    "free": "Free"
+    "durationHM": "{hours} h {minutes} min",
+    "free": "Free",
+    "from": "From",
+    "to": "To",
+    "search": "Search",
+    "today": "Today",
+    "transfers": "{count, plural, =0 {Direct} one {# transfer} other {# transfers}}"
   },
   "confidence": {
     "officialLive": "Official live data",
     "cachedVerified": "Cached & verified",
     "estimatedFlagged": "Estimated — check locally",
-    "legendTitle": "How confident are we?"
+    "legendTitle": "How confident are we?",
+    "legendLive": "Straight from an operator's live system.",
+    "legendCached": "From official timetables we cached and spot-checked, with the date we last verified it.",
+    "legendEstimated": "Researched but unconfirmed — treat as a starting point and check on the ground."
+  },
+  "modes": {
+    "walk": "Walk",
+    "tram": "Tram",
+    "train": "Train",
+    "coach": "Coach",
+    "bus": "Bus",
+    "petit-taxi": "Petit taxi",
+    "grand-taxi": "Grand taxi"
+  },
+  "payments": {
+    "card": "Card OK",
+    "cash": "Cash",
+    "cash-small-bills": "Bring small bills",
+    "onboard": "Pay on board",
+    "counter": "Buy at counter",
+    "app": "In-app payment"
+  },
+  "reasons": {
+    "fastest": "Fastest",
+    "cheapest": "Cheapest",
+    "fewest-transfers": "Fewest transfers",
+    "departs-soon": "Departs soon",
+    "works-offline": "Works offline",
+    "night-safer": "Safer at night",
+    "avoids-night-walk": "Avoids a night walk",
+    "short-walk": "Short walk",
+    "frequent-service": "Frequent service",
+    "direct-route": "Direct",
+    "verified-entrance": "Verified entrance"
+  },
+  "card": {
+    "bestNextMove": "Best next move",
+    "alternative": "Alternative",
+    "departs": "Departs {time}",
+    "arrives": "arrives {time}",
+    "whyThis": "Why this?",
+    "hideWhy": "Hide reasons",
+    "details": "Step by step",
+    "hideDetails": "Hide steps",
+    "finalApproach": "Final approach",
+    "fareNote": "Fares are honest ranges, not promises.",
+    "saveMove": "Save this move",
+    "savedMove": "Saved",
+    "noMoves": "No reliable option found for this trip right now. Try a nearby starting point, or check the city page for arrival guidance.",
+    "showAlternatives": "{count, plural, one {# more option} other {# more options}}"
+  },
+  "deepLinks": {
+    "bookOncf": "Book on ONCF Voyages",
+    "bookCtm": "Book on CTM",
+    "bookMarkoub": "Compare on marKoub"
+  },
+  "move": {
+    "title": "Arrive now",
+    "subtitle": "From where you stand, the safest, fastest, cheapest next action — with honest confidence.",
+    "whereAreYou": "Where are you?",
+    "whereTo": "Where do you need to be?",
+    "findMove": "Find my next move",
+    "budget": "Budget",
+    "budgetLean": "Lean",
+    "budgetMid": "Mid",
+    "budgetPremium": "Premium",
+    "timeNow": "Leaving now",
+    "pickPlace": "Choose a place…",
+    "resultsFor": "Next moves from {from} to {to}",
+    "departureTime": "Departure time"
+  },
+  "plan": {
+    "title": "Plan a route",
+    "subtitle": "Intercity rail and coach across Morocco, ranked your way, booked on the operator's own site.",
+    "strategy": "Optimize for",
+    "fastest": "Fastest",
+    "cheapest": "Cheapest",
+    "balanced": "Balanced",
+    "date": "Date",
+    "findRoutes": "Find routes",
+    "resultsFor": "Routes from {from} to {to}",
+    "noRoutes": "No scheduled departure found after that time. Try an earlier hour or the next morning — Moroccan intercity service thins out in the evening."
+  },
+  "saved": {
+    "title": "Saved moves",
+    "subtitle": "Stored on this device — they work offline.",
+    "empty": "Nothing saved yet. Save a move from the results and it will wait here, offline included.",
+    "savedAt": "Saved {date}",
+    "clearAll": "Remove all"
+  },
+  "a11y": {
+    "skipToContent": "Skip to content",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "expandCard": "Show details",
+    "languageSwitcher": "Change language"
   }
 }

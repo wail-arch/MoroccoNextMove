@@ -11,7 +11,9 @@
     "packs": "Packs hors ligne",
     "saved": "Enregistrés",
     "sources": "Sources de données",
-    "language": "Langue"
+    "language": "Langue",
+    "menu": "Menu",
+    "home": "Accueil"
   },
   "common": {
     "loading": "Chargement…",
@@ -23,12 +25,113 @@
     "offlineBanner": "Vous êtes hors ligne — données en cache affichées",
     "lastVerified": "Dernière vérification : {date}",
     "minutes": "{count, plural, one {# min} other {# min}}",
-    "free": "Gratuit"
+    "durationHM": "{hours} h {minutes} min",
+    "free": "Gratuit",
+    "from": "Départ",
+    "to": "Arrivée",
+    "search": "Rechercher",
+    "today": "Aujourd'hui",
+    "transfers": "{count, plural, =0 {Direct} one {# correspondance} other {# correspondances}}"
   },
   "confidence": {
     "officialLive": "Données officielles en direct",
     "cachedVerified": "En cache et vérifiées",
     "estimatedFlagged": "Estimées — à vérifier sur place",
-    "legendTitle": "Quel est notre niveau de confiance ?"
+    "legendTitle": "Quel est notre niveau de confiance ?",
+    "legendLive": "Directement du système temps réel d'un opérateur.",
+    "legendCached": "Issues d'horaires officiels mis en cache et contrôlés, avec la date de dernière vérification.",
+    "legendEstimated": "Recherchées mais non confirmées — un point de départ, à valider sur le terrain."
+  },
+  "modes": {
+    "walk": "À pied",
+    "tram": "Tramway",
+    "train": "Train",
+    "coach": "Autocar",
+    "bus": "Bus",
+    "petit-taxi": "Petit taxi",
+    "grand-taxi": "Grand taxi"
+  },
+  "payments": {
+    "card": "CB acceptée",
+    "cash": "Espèces",
+    "cash-small-bills": "Prévoyez des petites coupures",
+    "onboard": "Paiement à bord",
+    "counter": "Achat au guichet",
+    "app": "Paiement dans l'app"
+  },
+  "reasons": {
+    "fastest": "Le plus rapide",
+    "cheapest": "Le moins cher",
+    "fewest-transfers": "Moins de correspondances",
+    "departs-soon": "Part bientôt",
+    "works-offline": "Fonctionne hors ligne",
+    "night-safer": "Plus sûr la nuit",
+    "avoids-night-walk": "Évite une marche de nuit",
+    "short-walk": "Courte marche",
+    "frequent-service": "Passages fréquents",
+    "direct-route": "Direct",
+    "verified-entrance": "Entrée vérifiée"
+  },
+  "card": {
+    "bestNextMove": "Meilleur prochain mouvement",
+    "alternative": "Alternative",
+    "departs": "Départ {time}",
+    "arrives": "arrivée {time}",
+    "whyThis": "Pourquoi ce choix ?",
+    "hideWhy": "Masquer les raisons",
+    "details": "Étape par étape",
+    "hideDetails": "Masquer les étapes",
+    "finalApproach": "Approche finale",
+    "fareNote": "Les tarifs sont des fourchettes honnêtes, pas des promesses.",
+    "saveMove": "Enregistrer ce trajet",
+    "savedMove": "Enregistré",
+    "noMoves": "Aucune option fiable pour ce trajet à cette heure. Essayez un point de départ proche, ou consultez la page ville pour les conseils d'arrivée.",
+    "showAlternatives": "{count, plural, one {# autre option} other {# autres options}}"
+  },
+  "deepLinks": {
+    "bookOncf": "Réserver sur ONCF Voyages",
+    "bookCtm": "Réserver sur CTM",
+    "bookMarkoub": "Comparer sur marKoub"
+  },
+  "move": {
+    "title": "J'arrive maintenant",
+    "subtitle": "Depuis là où vous êtes : l'action suivante la plus sûre, rapide et économique — en toute transparence.",
+    "whereAreYou": "Où êtes-vous ?",
+    "whereTo": "Où devez-vous aller ?",
+    "findMove": "Trouver mon prochain mouvement",
+    "budget": "Budget",
+    "budgetLean": "Serré",
+    "budgetMid": "Moyen",
+    "budgetPremium": "Confort",
+    "timeNow": "Départ immédiat",
+    "pickPlace": "Choisissez un lieu…",
+    "resultsFor": "Prochains mouvements de {from} à {to}",
+    "departureTime": "Heure de départ"
+  },
+  "plan": {
+    "title": "Planifier un trajet",
+    "subtitle": "Train et autocar dans tout le Maroc, classés selon vos critères, réservés sur le site de l'opérateur.",
+    "strategy": "Optimiser pour",
+    "fastest": "Le plus rapide",
+    "cheapest": "Le moins cher",
+    "balanced": "Équilibré",
+    "date": "Date",
+    "findRoutes": "Chercher les trajets",
+    "resultsFor": "Trajets de {from} à {to}",
+    "noRoutes": "Aucun départ programmé après cette heure. Essayez plus tôt ou le lendemain matin — l'offre intercités se raréfie le soir au Maroc."
+  },
+  "saved": {
+    "title": "Trajets enregistrés",
+    "subtitle": "Stockés sur cet appareil — ils fonctionnent hors ligne.",
+    "empty": "Rien d'enregistré pour l'instant. Enregistrez un trajet depuis les résultats et il vous attendra ici, même hors ligne.",
+    "savedAt": "Enregistré le {date}",
+    "clearAll": "Tout retirer"
+  },
+  "a11y": {
+    "skipToContent": "Aller au contenu",
+    "openMenu": "Ouvrir le menu",
+    "closeMenu": "Fermer le menu",
+    "expandCard": "Afficher les détails",
+    "languageSwitcher": "Changer de langue"
   }
 }
