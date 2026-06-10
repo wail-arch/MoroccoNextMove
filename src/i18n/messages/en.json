@@ -128,6 +128,46 @@
     "savedAt": "Saved {date}",
     "clearAll": "Remove all"
   },
+  "landing": {
+    "heroKicker": "Morocco, honestly answered",
+    "heroSub": "Not a booking site. A calm answer to one question: from where you stand, what's the smartest next action — and how sure are we? Train times, tram lines, fair taxi prices, and the last 200 meters to your riad. Online or offline.",
+    "ctaArrive": "I'm arriving now",
+    "ctaPlan": "Plan an intercity route",
+    "howTitle": "How it works",
+    "how1Title": "Tell us where you stand",
+    "how1Body": "Airport curb, station platform, or a square in the medina — pick your spot and your destination.",
+    "how2Title": "Get one honest answer",
+    "how2Body": "We rank every option by time, cost, trust, and effort — and we show you exactly how confident we are in the data behind it.",
+    "how3Title": "Move with confidence",
+    "how3Body": "Fair fare ranges, payment heads-ups, scam alerts where they apply, and landmark directions for the final approach.",
+    "coverageTitle": "Where we work today",
+    "coverageSub": "Three launch cities plus the national rail network. Tangier and Fes are next.",
+    "mapCaption": "Launch corridor in green · next cities in saffron",
+    "packTitle": "Take Marrakech offline",
+    "packBody": "Download the city pack before you land: the map, verified pins, schedules, and every safety note keep working with zero bars in the medina.",
+    "packCta": "Get the offline pack",
+    "honestyTitle": "Our only trick is honesty",
+    "honestySub": "Every schedule, pin, and price in the app carries its source and the date we last verified it. When we're not sure, the card says so — in orange."
+  },
+  "cities": {
+    "title": "Cities",
+    "subtitle": "Pick a city for arrival guidance, quick answers, and what to watch out for.",
+    "viewGuide": "Open the city guide",
+    "comingSoon": "Coming next",
+    "quickMoves": "Answers travelers need here",
+    "watchOut": "Worth knowing here",
+    "openInMove": "Get the answer",
+    "backToCities": "All cities"
+  },
+  "sourcesPage": {
+    "title": "Data sources & honesty",
+    "intro": "Next Move is built on open data, official operator timetables, and our own field research. Nothing here is scraped from operator websites; everything carries a verification date, and when we are not confident, the interface says so explicitly. Next Move is independent and not affiliated with any operator.",
+    "openData": "Open data",
+    "operators": "Operator timetables (manually transcribed)",
+    "editorial": "Field research & traveler reports",
+    "editorialBody": "Fare ranges, scam patterns, and arrival notes synthesize operator publications, recurring traveler reports across public forums, and on-the-ground verification. They are honest ranges, not guarantees — conditions change faster than any database.",
+    "disclaimer": "Always confirm critical departures locally. If something here is wrong or stale, it will show an old verification date — trust the date."
+  },
   "cityNames": {
     "marrakech": "Marrakech",
     "casablanca": "Casablanca",

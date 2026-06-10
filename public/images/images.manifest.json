@@ -1,0 +1,17 @@
+{
+  "$comment": "Image slots for AI-generated artwork. Each slot maps to a file in public/images/. Slots set to null render with the design system's pattern/color fallbacks until an image is provided.",
+  "slots": {
+    "hero": null,
+    "city-marrakech": null,
+    "city-casablanca": null,
+    "city-rabat": null,
+    "pack-marrakech": null,
+    "og-image": null
+  },
+  "guidelines": {
+    "style": "Warm, editorial photography or illustration. Zellige green (#0E5A4E), terracotta (#C4502F), sand (#F1E8D8) palette. No stock-photo clichés, no camels-at-sunset.",
+    "hero": "Medina alley with light falling across plaster walls, or a calm overhead of a tiled courtyard.",
+    "city-*": "One distinctive, non-obvious visual per city (Marrakech: derb doorway; Casablanca: tram + art deco; Rabat: Oudayas blue-white lane).",
+    "ratio": "hero 16:9, city-* 4:3, og-image 1200x630"
+  }
+}

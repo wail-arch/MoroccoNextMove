@@ -128,6 +128,46 @@
     "savedAt": "Enregistré le {date}",
     "clearAll": "Tout retirer"
   },
+  "landing": {
+    "heroKicker": "Le Maroc, répondu honnêtement",
+    "heroSub": "Pas un site de réservation. Une réponse calme à une seule question : depuis là où vous êtes, quelle est la prochaine action la plus maligne — et à quel point en sommes-nous sûrs ? Horaires de train, lignes de tram, prix de taxi équitables, et les 200 derniers mètres jusqu'à votre riad. En ligne ou hors ligne.",
+    "ctaArrive": "J'arrive maintenant",
+    "ctaPlan": "Planifier un trajet intercités",
+    "howTitle": "Comment ça marche",
+    "how1Title": "Dites-nous où vous êtes",
+    "how1Body": "Trottoir d'aéroport, quai de gare ou place de la médina — choisissez votre point de départ et votre destination.",
+    "how2Title": "Recevez une réponse honnête",
+    "how2Body": "Chaque option est classée par temps, coût, confiance et effort — et nous affichons exactement notre niveau de confiance dans les données.",
+    "how3Title": "Avancez en confiance",
+    "how3Body": "Fourchettes de prix équitables, alertes paiement, avertissements arnaques quand ils s'appliquent, et repères pour l'approche finale.",
+    "coverageTitle": "Où nous opérons aujourd'hui",
+    "coverageSub": "Trois villes de lancement plus le réseau ferroviaire national. Tanger et Fès arrivent ensuite.",
+    "mapCaption": "Corridor de lancement en vert · prochaines villes en safran",
+    "packTitle": "Emportez Marrakech hors ligne",
+    "packBody": "Téléchargez le pack ville avant d'atterrir : la carte, les repères vérifiés, les horaires et chaque note de sécurité fonctionnent sans aucune barre de réseau dans la médina.",
+    "packCta": "Obtenir le pack hors ligne",
+    "honestyTitle": "Notre seul truc, c'est l'honnêteté",
+    "honestySub": "Chaque horaire, repère et prix porte sa source et la date de notre dernière vérification. Quand nous ne sommes pas sûrs, la carte le dit — en orange."
+  },
+  "cities": {
+    "title": "Villes",
+    "subtitle": "Choisissez une ville pour les conseils d'arrivée, les réponses rapides et les pièges à éviter.",
+    "viewGuide": "Ouvrir le guide de la ville",
+    "comingSoon": "Bientôt",
+    "quickMoves": "Les réponses dont on a besoin ici",
+    "watchOut": "Bon à savoir ici",
+    "openInMove": "Obtenir la réponse",
+    "backToCities": "Toutes les villes"
+  },
+  "sourcesPage": {
+    "title": "Sources de données et honnêteté",
+    "intro": "Next Move repose sur des données ouvertes, des horaires officiels d'opérateurs et notre propre recherche de terrain. Rien ici n'est extrait automatiquement des sites des opérateurs ; chaque donnée porte une date de vérification, et quand nous manquons de certitude, l'interface le dit explicitement. Next Move est indépendant et n'est affilié à aucun opérateur.",
+    "openData": "Données ouvertes",
+    "operators": "Horaires d'opérateurs (transcrits manuellement)",
+    "editorial": "Recherche de terrain et retours de voyageurs",
+    "editorialBody": "Les fourchettes de prix, schémas d'arnaque et notes d'arrivée synthétisent les publications des opérateurs, des signalements récurrents de voyageurs sur les forums publics et des vérifications sur place. Ce sont des fourchettes honnêtes, pas des garanties — la réalité change plus vite que n'importe quelle base de données.",
+    "disclaimer": "Confirmez toujours localement les départs critiques. Si une information est fausse ou périmée, sa date de vérification sera ancienne — fiez-vous à la date."
+  },
   "cityNames": {
     "marrakech": "Marrakech",
     "casablanca": "Casablanca",
