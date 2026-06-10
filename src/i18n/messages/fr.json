@@ -116,6 +116,7 @@
     "cheapest": "Le moins cher",
     "balanced": "Équilibré",
     "date": "Date",
+    "departAfter": "Départ après",
     "findRoutes": "Chercher les trajets",
     "resultsFor": "Trajets de {from} à {to}",
     "noRoutes": "Aucun départ programmé après cette heure. Essayez plus tôt ou le lendemain matin — l'offre intercités se raréfie le soir au Maroc."
@@ -126,6 +127,14 @@
     "empty": "Rien d'enregistré pour l'instant. Enregistrez un trajet depuis les résultats et il vous attendra ici, même hors ligne.",
     "savedAt": "Enregistré le {date}",
     "clearAll": "Tout retirer"
+  },
+  "cityNames": {
+    "marrakech": "Marrakech",
+    "casablanca": "Casablanca",
+    "rabat": "Rabat et Salé",
+    "tangier": "Tanger",
+    "fes": "Fès et Meknès",
+    "intercity": "Autres gares"
   },
   "a11y": {
     "skipToContent": "Aller au contenu",

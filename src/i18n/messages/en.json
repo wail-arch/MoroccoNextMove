@@ -116,6 +116,7 @@
     "cheapest": "Cheapest",
     "balanced": "Balanced",
     "date": "Date",
+    "departAfter": "Depart after",
     "findRoutes": "Find routes",
     "resultsFor": "Routes from {from} to {to}",
     "noRoutes": "No scheduled departure found after that time. Try an earlier hour or the next morning — Moroccan intercity service thins out in the evening."
@@ -126,6 +127,14 @@
     "empty": "Nothing saved yet. Save a move from the results and it will wait here, offline included.",
     "savedAt": "Saved {date}",
     "clearAll": "Remove all"
+  },
+  "cityNames": {
+    "marrakech": "Marrakech",
+    "casablanca": "Casablanca",
+    "rabat": "Rabat & Salé",
+    "tangier": "Tangier",
+    "fes": "Fes & Meknes",
+    "intercity": "Other stations"
   },
   "a11y": {
     "skipToContent": "Skip to content",
