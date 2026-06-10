@@ -1,0 +1,2460 @@
+{
+  "stops": [
+    {
+      "id": "TANGER_VILLE",
+      "name": {
+        "en": "Tanger-Ville",
+        "fr": "Tanger-Ville",
+        "ar": "طنجة المدينة"
+      },
+      "city": "tangier",
+      "point": {
+        "lat": 35.7643,
+        "lon": -5.834
+      }
+    },
+    {
+      "id": "TANGER_BORAQ",
+      "name": {
+        "en": "Tanger Al Boraq",
+        "fr": "Tanger Al Boraq",
+        "ar": "طنجة البراق"
+      },
+      "city": "tangier",
+      "point": {
+        "lat": 35.7385,
+        "lon": -5.8145
+      }
+    },
+    {
+      "id": "ASILAH",
+      "name": {
+        "en": "Asilah",
+        "fr": "Asilah",
+        "ar": "أصيلة"
+      },
+      "city": "tangier",
+      "point": {
+        "lat": 35.4653,
+        "lon": -6.0344
+      }
+    },
+    {
+      "id": "KENITRA",
+      "name": {
+        "en": "Kénitra",
+        "fr": "Kénitra",
+        "ar": "القنيطرة"
+      },
+      "city": "rabat",
+      "point": {
+        "lat": 34.261,
+        "lon": -6.5802
+      }
+    },
+    {
+      "id": "KENITRA_MEDINA",
+      "name": {
+        "en": "Kénitra-Medina",
+        "fr": "Kénitra-Medina",
+        "ar": "القنيطرة المدينة"
+      },
+      "city": "rabat",
+      "point": {
+        "lat": 34.2519,
+        "lon": -6.5803
+      }
+    },
+    {
+      "id": "RABAT_AGDAL",
+      "name": {
+        "en": "Rabat-Agdal",
+        "fr": "Rabat-Agdal",
+        "ar": "الرباط أكدال"
+      },
+      "city": "rabat",
+      "point": {
+        "lat": 34.0078,
+        "lon": -6.8517
+      }
+    },
+    {
+      "id": "RABAT_VILLE",
+      "name": {
+        "en": "Rabat-Ville",
+        "fr": "Rabat-Ville",
+        "ar": "الرباط المدينة"
+      },
+      "city": "rabat",
+      "point": {
+        "lat": 34.0212,
+        "lon": -6.8395
+      }
+    },
+    {
+      "id": "SALE",
+      "name": {
+        "en": "Salé",
+        "fr": "Salé",
+        "ar": "سلا"
+      },
+      "city": "rabat",
+      "point": {
+        "lat": 34.053,
+        "lon": -6.749
+      }
+    },
+    {
+      "id": "SALE_TABRIQUET",
+      "name": {
+        "en": "Salé-Tabriquet",
+        "fr": "Salé-Tabriquet",
+        "ar": "سلا تابريكت"
+      },
+      "city": "rabat",
+      "point": {
+        "lat": 34.04,
+        "lon": -6.77
+      }
+    },
+    {
+      "id": "CASA_VOYAGEURS",
+      "name": {
+        "en": "Casa-Voyageurs",
+        "fr": "Casa-Voyageurs",
+        "ar": "الدار البيضاء المسافرين"
+      },
+      "city": "casablanca",
+      "point": {
+        "lat": 33.5979,
+        "lon": -7.6191
+      }
+    },
+    {
+      "id": "CASA_PORT",
+      "name": {
+        "en": "Casa-Port",
+        "fr": "Casa-Port",
+        "ar": "الدار البيضاء الميناء"
+      },
+      "city": "casablanca",
+      "point": {
+        "lat": 33.6065,
+        "lon": -7.628
+      }
+    },
+    {
+      "id": "CASA_OASIS",
+      "name": {
+        "en": "Casa-Oasis",
+        "fr": "Casa-Oasis",
+        "ar": "الدار البيضاء الواحة"
+      },
+      "city": "casablanca",
+      "point": {
+        "lat": 33.5692,
+        "lon": -7.6495
+      }
+    },
+    {
+      "id": "AIN_SEBAA",
+      "name": {
+        "en": "Aïn Sebaâ",
+        "fr": "Aïn Sebaâ",
+        "ar": "عين السبع"
+      },
+      "city": "casablanca",
+      "point": {
+        "lat": 33.6167,
+        "lon": -7.55
+      }
+    },
+    {
+      "id": "MOHAMMEDIA",
+      "name": {
+        "en": "Mohammedia",
+        "fr": "Mohammedia",
+        "ar": "المحمدية"
+      },
+      "city": "casablanca",
+      "point": {
+        "lat": 33.6867,
+        "lon": -7.3833
+      }
+    },
+    {
+      "id": "BOUZNIKA",
+      "name": {
+        "en": "Bouznika",
+        "fr": "Bouznika",
+        "ar": "بوزنيقة"
+      },
+      "city": "rabat",
+      "point": {
+        "lat": 33.7833,
+        "lon": -7.1667
+      }
+    },
+    {
+      "id": "SKHIRAT",
+      "name": {
+        "en": "Skhirat",
+        "fr": "Skhirat",
+        "ar": "الصخيرات"
+      },
+      "city": "rabat",
+      "point": {
+        "lat": 33.85,
+        "lon": -7.0333
+      }
+    },
+    {
+      "id": "TEMARA",
+      "name": {
+        "en": "Témara",
+        "fr": "Témara",
+        "ar": "تمارة"
+      },
+      "city": "rabat",
+      "point": {
+        "lat": 33.9167,
+        "lon": -6.9167
+      }
+    },
+    {
+      "id": "SETTAT",
+      "name": {
+        "en": "Settat",
+        "fr": "Settat",
+        "ar": "سطات"
+      },
+      "city": "intercity",
+      "point": {
+        "lat": 32.9955,
+        "lon": -7.6174
+      }
+    },
+    {
+      "id": "BEN_GUERIR",
+      "name": {
+        "en": "Ben Guerir",
+        "fr": "Ben Guerir",
+        "ar": "بن جرير"
+      },
+      "city": "marrakech",
+      "point": {
+        "lat": 32.2333,
+        "lon": -7.95
+      }
+    },
+    {
+      "id": "MARRAKECH",
+      "name": {
+        "en": "Marrakech",
+        "fr": "Marrakech",
+        "ar": "مراكش"
+      },
+      "city": "marrakech",
+      "point": {
+        "lat": 31.6295,
+        "lon": -8.0153
+      }
+    },
+    {
+      "id": "MEKNES",
+      "name": {
+        "en": "Meknès",
+        "fr": "Meknès",
+        "ar": "مكناس"
+      },
+      "city": "fes",
+      "point": {
+        "lat": 33.8849,
+        "lon": -5.5389
+      }
+    },
+    {
+      "id": "FES",
+      "name": {
+        "en": "Fès",
+        "fr": "Fès",
+        "ar": "فاس"
+      },
+      "city": "fes",
+      "point": {
+        "lat": 33.9789,
+        "lon": -4.9935
+      }
+    },
+    {
+      "id": "TAZA",
+      "name": {
+        "en": "Taza",
+        "fr": "Taza",
+        "ar": "تازة"
+      },
+      "city": "fes",
+      "point": {
+        "lat": 34.2167,
+        "lon": -4.0167
+      }
+    },
+    {
+      "id": "TAOURIRT",
+      "name": {
+        "en": "Taourirt",
+        "fr": "Taourirt",
+        "ar": "تاوريرت"
+      },
+      "city": "intercity",
+      "point": {
+        "lat": 34.4065,
+        "lon": -3.0034
+      }
+    },
+    {
+      "id": "OUJDA",
+      "name": {
+        "en": "Oujda",
+        "fr": "Oujda",
+        "ar": "وجدة"
+      },
+      "city": "intercity",
+      "point": {
+        "lat": 34.6805,
+        "lon": -1.911
+      }
+    },
+    {
+      "id": "NADOR",
+      "name": {
+        "en": "Nador",
+        "fr": "Nador",
+        "ar": "الناظور"
+      },
+      "city": "intercity",
+      "point": {
+        "lat": 35.1681,
+        "lon": -2.9343
+      }
+    },
+    {
+      "id": "BERKANE",
+      "name": {
+        "en": "Berkane",
+        "fr": "Berkane",
+        "ar": "بركان"
+      },
+      "city": "intercity",
+      "point": {
+        "lat": 35.1089,
+        "lon": -2.3069
+      }
+    },
+    {
+      "id": "EL_JADIDA",
+      "name": {
+        "en": "El Jadida",
+        "fr": "El Jadida",
+        "ar": "الجديدة"
+      },
+      "city": "intercity",
+      "point": {
+        "lat": 33.2316,
+        "lon": -8.5147
+      }
+    },
+    {
+      "id": "SAFI",
+      "name": {
+        "en": "Safi",
+        "fr": "Safi",
+        "ar": "آسفي"
+      },
+      "city": "intercity",
+      "point": {
+        "lat": 32.2994,
+        "lon": -9.2379
+      }
+    },
+    {
+      "id": "KHOURIBGA",
+      "name": {
+        "en": "Khouribga",
+        "fr": "Khouribga",
+        "ar": "خريبكة"
+      },
+      "city": "intercity",
+      "point": {
+        "lat": 32.8811,
+        "lon": -6.9063
+      }
+    },
+    {
+      "id": "OUED_ZEM",
+      "name": {
+        "en": "Oued Zem",
+        "fr": "Oued Zem",
+        "ar": "وادي زم"
+      },
+      "city": "intercity",
+      "point": {
+        "lat": 32.8633,
+        "lon": -6.5667
+      }
+    },
+    {
+      "id": "BENI_MELLAL",
+      "name": {
+        "en": "Béni Mellal",
+        "fr": "Béni Mellal",
+        "ar": "بني ملال"
+      },
+      "city": "intercity",
+      "point": {
+        "lat": 32.3374,
+        "lon": -6.3494
+      }
+    },
+    {
+      "id": "SIDI_KACEM",
+      "name": {
+        "en": "Sidi Kacem",
+        "fr": "Sidi Kacem",
+        "ar": "سيدي قاسم"
+      },
+      "city": "fes",
+      "point": {
+        "lat": 34.2167,
+        "lon": -5.7
+      }
+    }
+  ],
+  "lines": [
+    {
+      "id": "AL_BORAQ_TNG_CASA",
+      "mode": "train",
+      "name": {
+        "en": "Al Boraq · Tanger - Casablanca (High Speed)",
+        "fr": "Al Boraq · Tanger - Casablanca (High Speed)",
+        "ar": "البراق: طنجة – الدار البيضاء"
+      },
+      "operator": "ONCF",
+      "stopIds": [
+        "TANGER_VILLE",
+        "KENITRA",
+        "RABAT_AGDAL",
+        "CASA_VOYAGEURS"
+      ],
+      "service": {
+        "kind": "timetable",
+        "trips": [
+          {
+            "tripId": "AB_TNG_CASA_0600",
+            "days": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "stopTimes": [
+              {
+                "stopId": "TANGER_VILLE",
+                "time": "06:00"
+              },
+              {
+                "stopId": "KENITRA",
+                "time": "06:52"
+              },
+              {
+                "stopId": "RABAT_AGDAL",
+                "time": "07:20"
+              },
+              {
+                "stopId": "CASA_VOYAGEURS",
+                "time": "08:10"
+              }
+            ]
+          },
+          {
+            "tripId": "AB_TNG_CASA_0700",
+            "days": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "stopTimes": [
+              {
+                "stopId": "TANGER_VILLE",
+                "time": "07:00"
+              },
+              {
+                "stopId": "KENITRA",
+                "time": "07:52"
+              },
+              {
+                "stopId": "RABAT_AGDAL",
+                "time": "08:20"
+              },
+              {
+                "stopId": "CASA_VOYAGEURS",
+                "time": "09:10"
+              }
+            ]
+          },
+          {
+            "tripId": "AB_TNG_CASA_0800",
+            "days": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "stopTimes": [
+              {
+                "stopId": "TANGER_VILLE",
+                "time": "08:00"
+              },
+              {
+                "stopId": "KENITRA",
+                "time": "08:52"
+              },
+              {
+                "stopId": "RABAT_AGDAL",
+                "time": "09:20"
+              },
+              {
+                "stopId": "CASA_VOYAGEURS",
+                "time": "10:10"
+              }
+            ]
+          },
+          {
+            "tripId": "AB_TNG_CASA_0900",
+            "days": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "stopTimes": [
+              {
+                "stopId": "TANGER_VILLE",
+                "time": "09:00"
+              },
+              {
+                "stopId": "KENITRA",
+                "time": "09:52"
+              },
+              {
+                "stopId": "RABAT_AGDAL",
+                "time": "10:20"
+              },
+              {
+                "stopId": "CASA_VOYAGEURS",
+                "time": "11:10"
+              }
+            ]
+          },
+          {
+            "tripId": "AB_TNG_CASA_1000",
+            "days": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "stopTimes": [
+              {
+                "stopId": "TANGER_VILLE",
+                "time": "10:00"
+              },
+              {
+                "stopId": "KENITRA",
+                "time": "10:52"
+              },
+              {
+                "stopId": "RABAT_AGDAL",
+                "time": "11:20"
+              },
+              {
+                "stopId": "CASA_VOYAGEURS",
+                "time": "12:10"
+              }
+            ]
+          },
+          {
+            "tripId": "AB_TNG_CASA_1100",
+            "days": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "stopTimes": [
+              {
+                "stopId": "TANGER_VILLE",
+                "time": "11:00"
+              },
+              {
+                "stopId": "KENITRA",
+                "time": "11:52"
+              },
+              {
+                "stopId": "RABAT_AGDAL",
+                "time": "12:20"
+              },
+              {
+                "stopId": "CASA_VOYAGEURS",
+                "time": "13:10"
+              }
+            ]
+          },
+          {
+            "tripId": "AB_TNG_CASA_1200",
+            "days": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "stopTimes": [
+              {
+                "stopId": "TANGER_VILLE",
+                "time": "12:00"
+              },
+              {
+                "stopId": "KENITRA",
+                "time": "12:52"
+              },
+              {
+                "stopId": "RABAT_AGDAL",
+                "time": "13:20"
+              },
+              {
+                "stopId": "CASA_VOYAGEURS",
+                "time": "14:10"
+              }
+            ]
+          },
+          {
+            "tripId": "AB_TNG_CASA_1300",
+            "days": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "stopTimes": [
+              {
+                "stopId": "TANGER_VILLE",
+                "time": "13:00"
+              },
+              {
+                "stopId": "KENITRA",
+                "time": "13:52"
+              },
+              {
+                "stopId": "RABAT_AGDAL",
+                "time": "14:20"
+              },
+              {
+                "stopId": "CASA_VOYAGEURS",
+                "time": "15:10"
+              }
+            ]
+          },
+          {
+            "tripId": "AB_TNG_CASA_1400",
+            "days": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "stopTimes": [
+              {
+                "stopId": "TANGER_VILLE",
+                "time": "14:00"
+              },
+              {
+                "stopId": "KENITRA",
+                "time": "14:52"
+              },
+              {
+                "stopId": "RABAT_AGDAL",
+                "time": "15:20"
+              },
+              {
+                "stopId": "CASA_VOYAGEURS",
+                "time": "16:10"
+              }
+            ]
+          },
+          {
+            "tripId": "AB_TNG_CASA_1500",
+            "days": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "stopTimes": [
+              {
+                "stopId": "TANGER_VILLE",
+                "time": "15:00"
+              },
+              {
+                "stopId": "KENITRA",
+                "time": "15:52"
+              },
+              {
+                "stopId": "RABAT_AGDAL",
+                "time": "16:20"
+              },
+              {
+                "stopId": "CASA_VOYAGEURS",
+                "time": "17:10"
+              }
+            ]
+          },
+          {
+            "tripId": "AB_TNG_CASA_1600",
+            "days": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "stopTimes": [
+              {
+                "stopId": "TANGER_VILLE",
+                "time": "16:00"
+              },
+              {
+                "stopId": "KENITRA",
+                "time": "16:52"
+              },
+              {
+                "stopId": "RABAT_AGDAL",
+                "time": "17:20"
+              },
+              {
+                "stopId": "CASA_VOYAGEURS",
+                "time": "18:10"
+              }
+            ]
+          },
+          {
+            "tripId": "AB_TNG_CASA_1700",
+            "days": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "stopTimes": [
+              {
+                "stopId": "TANGER_VILLE",
+                "time": "17:00"
+              },
+              {
+                "stopId": "KENITRA",
+                "time": "17:52"
+              },
+              {
+                "stopId": "RABAT_AGDAL",
+                "time": "18:20"
+              },
+              {
+                "stopId": "CASA_VOYAGEURS",
+                "time": "19:10"
+              }
+            ]
+          },
+          {
+            "tripId": "AB_TNG_CASA_1800",
+            "days": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "stopTimes": [
+              {
+                "stopId": "TANGER_VILLE",
+                "time": "18:00"
+              },
+              {
+                "stopId": "KENITRA",
+                "time": "18:52"
+              },
+              {
+                "stopId": "RABAT_AGDAL",
+                "time": "19:20"
+              },
+              {
+                "stopId": "CASA_VOYAGEURS",
+                "time": "20:10"
+              }
+            ]
+          },
+          {
+            "tripId": "AB_TNG_CASA_1900",
+            "days": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "stopTimes": [
+              {
+                "stopId": "TANGER_VILLE",
+                "time": "19:00"
+              },
+              {
+                "stopId": "KENITRA",
+                "time": "19:52"
+              },
+              {
+                "stopId": "RABAT_AGDAL",
+                "time": "20:20"
+              },
+              {
+                "stopId": "CASA_VOYAGEURS",
+                "time": "21:10"
+              }
+            ]
+          },
+          {
+            "tripId": "AB_TNG_CASA_2100",
+            "days": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "stopTimes": [
+              {
+                "stopId": "TANGER_VILLE",
+                "time": "21:00"
+              },
+              {
+                "stopId": "KENITRA",
+                "time": "21:52"
+              },
+              {
+                "stopId": "RABAT_AGDAL",
+                "time": "22:20"
+              },
+              {
+                "stopId": "CASA_VOYAGEURS",
+                "time": "23:10"
+              }
+            ]
+          },
+          {
+            "tripId": "AB_CASA_TNG_0730",
+            "days": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "stopTimes": [
+              {
+                "stopId": "CASA_VOYAGEURS",
+                "time": "07:30"
+              },
+              {
+                "stopId": "RABAT_AGDAL",
+                "time": "07:58"
+              },
+              {
+                "stopId": "KENITRA",
+                "time": "08:18"
+              },
+              {
+                "stopId": "TANGER_VILLE",
+                "time": "09:00"
+              }
+            ]
+          },
+          {
+            "tripId": "AB_CASA_TNG_0900",
+            "days": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "stopTimes": [
+              {
+                "stopId": "CASA_VOYAGEURS",
+                "time": "09:00"
+              },
+              {
+                "stopId": "RABAT_AGDAL",
+                "time": "09:28"
+              },
+              {
+                "stopId": "KENITRA",
+                "time": "09:48"
+              },
+              {
+                "stopId": "TANGER_VILLE",
+                "time": "10:30"
+              }
+            ]
+          },
+          {
+            "tripId": "AB_CASA_TNG_1100",
+            "days": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "stopTimes": [
+              {
+                "stopId": "CASA_VOYAGEURS",
+                "time": "11:00"
+              },
+              {
+                "stopId": "RABAT_AGDAL",
+                "time": "11:28"
+              },
+              {
+                "stopId": "KENITRA",
+                "time": "11:48"
+              },
+              {
+                "stopId": "TANGER_VILLE",
+                "time": "12:30"
+              }
+            ]
+          },
+          {
+            "tripId": "AB_CASA_TNG_1415",
+            "days": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "stopTimes": [
+              {
+                "stopId": "CASA_VOYAGEURS",
+                "time": "14:15"
+              },
+              {
+                "stopId": "RABAT_AGDAL",
+                "time": "14:43"
+              },
+              {
+                "stopId": "KENITRA",
+                "time": "15:03"
+              },
+              {
+                "stopId": "TANGER_VILLE",
+                "time": "15:45"
+              }
+            ]
+          },
+          {
+            "tripId": "AB_CASA_TNG_1615",
+            "days": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "stopTimes": [
+              {
+                "stopId": "CASA_VOYAGEURS",
+                "time": "16:15"
+              },
+              {
+                "stopId": "RABAT_AGDAL",
+                "time": "16:43"
+              },
+              {
+                "stopId": "KENITRA",
+                "time": "17:03"
+              },
+              {
+                "stopId": "TANGER_VILLE",
+                "time": "17:45"
+              }
+            ]
+          },
+          {
+            "tripId": "AB_CASA_TNG_1830",
+            "days": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "stopTimes": [
+              {
+                "stopId": "CASA_VOYAGEURS",
+                "time": "18:30"
+              },
+              {
+                "stopId": "RABAT_AGDAL",
+                "time": "18:58"
+              },
+              {
+                "stopId": "KENITRA",
+                "time": "19:18"
+              },
+              {
+                "stopId": "TANGER_VILLE",
+                "time": "20:00"
+              }
+            ]
+          }
+        ]
+      },
+      "fare": {
+        "currency": "MAD",
+        "min": 150,
+        "max": 250,
+        "per": "person"
+      },
+      "paymentModes": [
+        "card",
+        "counter"
+      ],
+      "tier": "cached-verified",
+      "deepLink": {
+        "labelKey": "deepLinks.bookOncf",
+        "url": "https://www.oncf-voyages.ma"
+      },
+      "provenance": {
+        "sourceId": "oncf-community-gtfs",
+        "sourceName": "Rail Maroc Community GTFS (ONCF)",
+        "sourceUrl": "https://github.com/newsbubbles/rail_maroc_oncf",
+        "license": "ODbL-1.0",
+        "method": "community-feed",
+        "lastVerifiedAt": "2026-01-24"
+      }
+    },
+    {
+      "id": "AL_ATLAS_CASA_MKC",
+      "mode": "train",
+      "name": {
+        "en": "Al Atlas · Casablanca - Marrakech",
+        "fr": "Al Atlas · Casablanca - Marrakech",
+        "ar": "الأطلس: الدار البيضاء – مراكش"
+      },
+      "operator": "ONCF",
+      "stopIds": [
+        "CASA_VOYAGEURS",
+        "MARRAKECH"
+      ],
+      "service": {
+        "kind": "timetable",
+        "trips": [
+          {
+            "tripId": "AT_CASA_MKC_0700",
+            "days": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "stopTimes": [
+              {
+                "stopId": "CASA_VOYAGEURS",
+                "time": "07:00"
+              },
+              {
+                "stopId": "MARRAKECH",
+                "time": "09:00"
+              }
+            ]
+          },
+          {
+            "tripId": "AT_CASA_MKC_0800",
+            "days": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "stopTimes": [
+              {
+                "stopId": "CASA_VOYAGEURS",
+                "time": "08:00"
+              },
+              {
+                "stopId": "MARRAKECH",
+                "time": "10:00"
+              }
+            ]
+          },
+          {
+            "tripId": "AT_CASA_MKC_0900",
+            "days": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "stopTimes": [
+              {
+                "stopId": "CASA_VOYAGEURS",
+                "time": "09:00"
+              },
+              {
+                "stopId": "MARRAKECH",
+                "time": "11:00"
+              }
+            ]
+          },
+          {
+            "tripId": "AT_CASA_MKC_1000",
+            "days": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "stopTimes": [
+              {
+                "stopId": "CASA_VOYAGEURS",
+                "time": "10:00"
+              },
+              {
+                "stopId": "MARRAKECH",
+                "time": "12:00"
+              }
+            ]
+          },
+          {
+            "tripId": "AT_CASA_MKC_1100",
+            "days": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "stopTimes": [
+              {
+                "stopId": "CASA_VOYAGEURS",
+                "time": "11:00"
+              },
+              {
+                "stopId": "MARRAKECH",
+                "time": "13:00"
+              }
+            ]
+          },
+          {
+            "tripId": "AT_CASA_MKC_1400",
+            "days": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "stopTimes": [
+              {
+                "stopId": "CASA_VOYAGEURS",
+                "time": "14:00"
+              },
+              {
+                "stopId": "MARRAKECH",
+                "time": "16:00"
+              }
+            ]
+          },
+          {
+            "tripId": "AT_CASA_MKC_1500",
+            "days": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "stopTimes": [
+              {
+                "stopId": "CASA_VOYAGEURS",
+                "time": "15:00"
+              },
+              {
+                "stopId": "MARRAKECH",
+                "time": "17:00"
+              }
+            ]
+          },
+          {
+            "tripId": "AT_CASA_MKC_1600",
+            "days": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "stopTimes": [
+              {
+                "stopId": "CASA_VOYAGEURS",
+                "time": "16:00"
+              },
+              {
+                "stopId": "MARRAKECH",
+                "time": "18:00"
+              }
+            ]
+          },
+          {
+            "tripId": "AT_CASA_MKC_1700",
+            "days": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "stopTimes": [
+              {
+                "stopId": "CASA_VOYAGEURS",
+                "time": "17:00"
+              },
+              {
+                "stopId": "MARRAKECH",
+                "time": "19:00"
+              }
+            ]
+          },
+          {
+            "tripId": "AT_CASA_MKC_1800",
+            "days": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "stopTimes": [
+              {
+                "stopId": "CASA_VOYAGEURS",
+                "time": "18:00"
+              },
+              {
+                "stopId": "MARRAKECH",
+                "time": "20:00"
+              }
+            ]
+          },
+          {
+            "tripId": "AT_CASA_MKC_1900",
+            "days": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "stopTimes": [
+              {
+                "stopId": "CASA_VOYAGEURS",
+                "time": "19:00"
+              },
+              {
+                "stopId": "MARRAKECH",
+                "time": "21:00"
+              }
+            ]
+          },
+          {
+            "tripId": "AT_MKC_CASA_0730",
+            "days": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "stopTimes": [
+              {
+                "stopId": "MARRAKECH",
+                "time": "07:30"
+              },
+              {
+                "stopId": "CASA_VOYAGEURS",
+                "time": "09:30"
+              }
+            ]
+          },
+          {
+            "tripId": "AT_MKC_CASA_0830",
+            "days": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "stopTimes": [
+              {
+                "stopId": "MARRAKECH",
+                "time": "08:30"
+              },
+              {
+                "stopId": "CASA_VOYAGEURS",
+                "time": "10:30"
+              }
+            ]
+          },
+          {
+            "tripId": "AT_MKC_CASA_0930",
+            "days": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "stopTimes": [
+              {
+                "stopId": "MARRAKECH",
+                "time": "09:30"
+              },
+              {
+                "stopId": "CASA_VOYAGEURS",
+                "time": "11:30"
+              }
+            ]
+          },
+          {
+            "tripId": "AT_MKC_CASA_1030",
+            "days": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "stopTimes": [
+              {
+                "stopId": "MARRAKECH",
+                "time": "10:30"
+              },
+              {
+                "stopId": "CASA_VOYAGEURS",
+                "time": "12:30"
+              }
+            ]
+          },
+          {
+            "tripId": "AT_MKC_CASA_1300",
+            "days": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "stopTimes": [
+              {
+                "stopId": "MARRAKECH",
+                "time": "13:00"
+              },
+              {
+                "stopId": "CASA_VOYAGEURS",
+                "time": "15:00"
+              }
+            ]
+          },
+          {
+            "tripId": "AT_MKC_CASA_1400",
+            "days": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "stopTimes": [
+              {
+                "stopId": "MARRAKECH",
+                "time": "14:00"
+              },
+              {
+                "stopId": "CASA_VOYAGEURS",
+                "time": "16:00"
+              }
+            ]
+          },
+          {
+            "tripId": "AT_MKC_CASA_1500",
+            "days": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "stopTimes": [
+              {
+                "stopId": "MARRAKECH",
+                "time": "15:00"
+              },
+              {
+                "stopId": "CASA_VOYAGEURS",
+                "time": "17:00"
+              }
+            ]
+          },
+          {
+            "tripId": "AT_MKC_CASA_1600",
+            "days": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "stopTimes": [
+              {
+                "stopId": "MARRAKECH",
+                "time": "16:00"
+              },
+              {
+                "stopId": "CASA_VOYAGEURS",
+                "time": "18:00"
+              }
+            ]
+          },
+          {
+            "tripId": "AT_MKC_CASA_1700",
+            "days": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "stopTimes": [
+              {
+                "stopId": "MARRAKECH",
+                "time": "17:00"
+              },
+              {
+                "stopId": "CASA_VOYAGEURS",
+                "time": "19:00"
+              }
+            ]
+          },
+          {
+            "tripId": "AT_MKC_CASA_1900",
+            "days": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "stopTimes": [
+              {
+                "stopId": "MARRAKECH",
+                "time": "19:00"
+              },
+              {
+                "stopId": "CASA_VOYAGEURS",
+                "time": "21:00"
+              }
+            ]
+          }
+        ]
+      },
+      "fare": {
+        "currency": "MAD",
+        "min": 90,
+        "max": 150,
+        "per": "person"
+      },
+      "paymentModes": [
+        "card",
+        "counter"
+      ],
+      "tier": "cached-verified",
+      "deepLink": {
+        "labelKey": "deepLinks.bookOncf",
+        "url": "https://www.oncf-voyages.ma"
+      },
+      "provenance": {
+        "sourceId": "oncf-community-gtfs",
+        "sourceName": "Rail Maroc Community GTFS (ONCF)",
+        "sourceUrl": "https://github.com/newsbubbles/rail_maroc_oncf",
+        "license": "ODbL-1.0",
+        "method": "community-feed",
+        "lastVerifiedAt": "2026-01-24"
+      }
+    },
+    {
+      "id": "AL_ATLAS_CASA_FES",
+      "mode": "train",
+      "name": {
+        "en": "Al Atlas · Casablanca - Fès",
+        "fr": "Al Atlas · Casablanca - Fès",
+        "ar": "الأطلس: الدار البيضاء – فاس"
+      },
+      "operator": "ONCF",
+      "stopIds": [
+        "CASA_VOYAGEURS",
+        "RABAT_AGDAL",
+        "MEKNES",
+        "FES"
+      ],
+      "service": {
+        "kind": "timetable",
+        "trips": [
+          {
+            "tripId": "AT_CASA_FES_0700",
+            "days": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "stopTimes": [
+              {
+                "stopId": "CASA_VOYAGEURS",
+                "time": "07:00"
+              },
+              {
+                "stopId": "RABAT_AGDAL",
+                "time": "07:48"
+              },
+              {
+                "stopId": "MEKNES",
+                "time": "09:18"
+              },
+              {
+                "stopId": "FES",
+                "time": "10:30"
+              }
+            ]
+          },
+          {
+            "tripId": "AT_CASA_FES_1000",
+            "days": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "stopTimes": [
+              {
+                "stopId": "CASA_VOYAGEURS",
+                "time": "10:00"
+              },
+              {
+                "stopId": "RABAT_AGDAL",
+                "time": "10:48"
+              },
+              {
+                "stopId": "MEKNES",
+                "time": "12:18"
+              },
+              {
+                "stopId": "FES",
+                "time": "13:30"
+              }
+            ]
+          },
+          {
+            "tripId": "AT_CASA_FES_1400",
+            "days": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "stopTimes": [
+              {
+                "stopId": "CASA_VOYAGEURS",
+                "time": "14:00"
+              },
+              {
+                "stopId": "RABAT_AGDAL",
+                "time": "14:48"
+              },
+              {
+                "stopId": "MEKNES",
+                "time": "16:18"
+              },
+              {
+                "stopId": "FES",
+                "time": "17:30"
+              }
+            ]
+          },
+          {
+            "tripId": "AT_CASA_FES_1700",
+            "days": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "stopTimes": [
+              {
+                "stopId": "CASA_VOYAGEURS",
+                "time": "17:00"
+              },
+              {
+                "stopId": "RABAT_AGDAL",
+                "time": "17:48"
+              },
+              {
+                "stopId": "MEKNES",
+                "time": "19:18"
+              },
+              {
+                "stopId": "FES",
+                "time": "20:30"
+              }
+            ]
+          },
+          {
+            "tripId": "AT_FES_CASA_0700",
+            "days": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "stopTimes": [
+              {
+                "stopId": "FES",
+                "time": "07:00"
+              },
+              {
+                "stopId": "MEKNES",
+                "time": "08:18"
+              },
+              {
+                "stopId": "RABAT_AGDAL",
+                "time": "09:48"
+              },
+              {
+                "stopId": "CASA_VOYAGEURS",
+                "time": "10:30"
+              }
+            ]
+          },
+          {
+            "tripId": "AT_FES_CASA_1000",
+            "days": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "stopTimes": [
+              {
+                "stopId": "FES",
+                "time": "10:00"
+              },
+              {
+                "stopId": "MEKNES",
+                "time": "11:18"
+              },
+              {
+                "stopId": "RABAT_AGDAL",
+                "time": "12:48"
+              },
+              {
+                "stopId": "CASA_VOYAGEURS",
+                "time": "13:30"
+              }
+            ]
+          },
+          {
+            "tripId": "AT_FES_CASA_1400",
+            "days": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "stopTimes": [
+              {
+                "stopId": "FES",
+                "time": "14:00"
+              },
+              {
+                "stopId": "MEKNES",
+                "time": "15:18"
+              },
+              {
+                "stopId": "RABAT_AGDAL",
+                "time": "16:48"
+              },
+              {
+                "stopId": "CASA_VOYAGEURS",
+                "time": "17:30"
+              }
+            ]
+          },
+          {
+            "tripId": "AT_FES_CASA_1700",
+            "days": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "stopTimes": [
+              {
+                "stopId": "FES",
+                "time": "17:00"
+              },
+              {
+                "stopId": "MEKNES",
+                "time": "18:18"
+              },
+              {
+                "stopId": "RABAT_AGDAL",
+                "time": "19:48"
+              },
+              {
+                "stopId": "CASA_VOYAGEURS",
+                "time": "20:30"
+              }
+            ]
+          }
+        ]
+      },
+      "fare": {
+        "currency": "MAD",
+        "min": 110,
+        "max": 180,
+        "per": "person"
+      },
+      "paymentModes": [
+        "card",
+        "counter"
+      ],
+      "tier": "cached-verified",
+      "deepLink": {
+        "labelKey": "deepLinks.bookOncf",
+        "url": "https://www.oncf-voyages.ma"
+      },
+      "provenance": {
+        "sourceId": "oncf-community-gtfs",
+        "sourceName": "Rail Maroc Community GTFS (ONCF)",
+        "sourceUrl": "https://github.com/newsbubbles/rail_maroc_oncf",
+        "license": "ODbL-1.0",
+        "method": "community-feed",
+        "lastVerifiedAt": "2026-01-24"
+      }
+    },
+    {
+      "id": "AL_ATLAS_TNG_FES",
+      "mode": "train",
+      "name": {
+        "en": "Al Atlas · Tanger - Fès (Direct)",
+        "fr": "Al Atlas · Tanger - Fès (Direct)",
+        "ar": "الأطلس: طنجة – فاس"
+      },
+      "operator": "ONCF",
+      "stopIds": [
+        "TANGER_VILLE",
+        "SIDI_KACEM",
+        "MEKNES",
+        "FES"
+      ],
+      "service": {
+        "kind": "timetable",
+        "trips": [
+          {
+            "tripId": "AT_TNG_FES_0740",
+            "days": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "stopTimes": [
+              {
+                "stopId": "TANGER_VILLE",
+                "time": "07:40"
+              },
+              {
+                "stopId": "SIDI_KACEM",
+                "time": "09:33"
+              },
+              {
+                "stopId": "MEKNES",
+                "time": "11:23"
+              },
+              {
+                "stopId": "FES",
+                "time": "11:53"
+              }
+            ]
+          },
+          {
+            "tripId": "AT_TNG_FES_1135",
+            "days": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "stopTimes": [
+              {
+                "stopId": "TANGER_VILLE",
+                "time": "11:35"
+              },
+              {
+                "stopId": "SIDI_KACEM",
+                "time": "13:28"
+              },
+              {
+                "stopId": "MEKNES",
+                "time": "15:18"
+              },
+              {
+                "stopId": "FES",
+                "time": "15:48"
+              }
+            ]
+          },
+          {
+            "tripId": "AT_TNG_FES_1430",
+            "days": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "stopTimes": [
+              {
+                "stopId": "TANGER_VILLE",
+                "time": "14:30"
+              },
+              {
+                "stopId": "SIDI_KACEM",
+                "time": "16:23"
+              },
+              {
+                "stopId": "MEKNES",
+                "time": "18:13"
+              },
+              {
+                "stopId": "FES",
+                "time": "18:43"
+              }
+            ]
+          },
+          {
+            "tripId": "AT_TNG_FES_1905",
+            "days": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "stopTimes": [
+              {
+                "stopId": "TANGER_VILLE",
+                "time": "19:05"
+              },
+              {
+                "stopId": "SIDI_KACEM",
+                "time": "20:58"
+              },
+              {
+                "stopId": "MEKNES",
+                "time": "22:48"
+              },
+              {
+                "stopId": "FES",
+                "time": "23:18"
+              }
+            ]
+          }
+        ]
+      },
+      "fare": {
+        "currency": "MAD",
+        "min": 100,
+        "max": 170,
+        "per": "person"
+      },
+      "paymentModes": [
+        "card",
+        "counter"
+      ],
+      "tier": "cached-verified",
+      "deepLink": {
+        "labelKey": "deepLinks.bookOncf",
+        "url": "https://www.oncf-voyages.ma"
+      },
+      "provenance": {
+        "sourceId": "oncf-community-gtfs",
+        "sourceName": "Rail Maroc Community GTFS (ONCF)",
+        "sourceUrl": "https://github.com/newsbubbles/rail_maroc_oncf",
+        "license": "ODbL-1.0",
+        "method": "community-feed",
+        "lastVerifiedAt": "2026-01-24"
+      }
+    },
+    {
+      "id": "TNR_CASA_KENITRA",
+      "mode": "train",
+      "name": {
+        "en": "TNR · Casa-Port - Rabat - Kénitra (Navette)",
+        "fr": "TNR · Casa-Port - Rabat - Kénitra (Navette)",
+        "ar": "القطار السريع: الدار البيضاء – القنيطرة"
+      },
+      "operator": "ONCF",
+      "stopIds": [
+        "CASA_PORT",
+        "AIN_SEBAA",
+        "MOHAMMEDIA",
+        "BOUZNIKA",
+        "SKHIRAT",
+        "TEMARA",
+        "RABAT_AGDAL",
+        "RABAT_VILLE",
+        "SALE",
+        "SALE_TABRIQUET",
+        "KENITRA"
+      ],
+      "service": {
+        "kind": "timetable",
+        "trips": [
+          {
+            "tripId": "TNR_CASA_KEN_0620",
+            "days": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "stopTimes": [
+              {
+                "stopId": "CASA_PORT",
+                "time": "06:20"
+              },
+              {
+                "stopId": "AIN_SEBAA",
+                "time": "06:32"
+              },
+              {
+                "stopId": "MOHAMMEDIA",
+                "time": "06:42"
+              },
+              {
+                "stopId": "BOUZNIKA",
+                "time": "06:55"
+              },
+              {
+                "stopId": "SKHIRAT",
+                "time": "07:04"
+              },
+              {
+                "stopId": "TEMARA",
+                "time": "07:14"
+              },
+              {
+                "stopId": "RABAT_AGDAL",
+                "time": "07:24"
+              },
+              {
+                "stopId": "RABAT_VILLE",
+                "time": "07:32"
+              },
+              {
+                "stopId": "SALE",
+                "time": "07:40"
+              },
+              {
+                "stopId": "SALE_TABRIQUET",
+                "time": "07:48"
+              },
+              {
+                "stopId": "KENITRA",
+                "time": "08:05"
+              }
+            ]
+          },
+          {
+            "tripId": "TNR_CASA_KEN_0700",
+            "days": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "stopTimes": [
+              {
+                "stopId": "CASA_PORT",
+                "time": "07:00"
+              },
+              {
+                "stopId": "AIN_SEBAA",
+                "time": "07:12"
+              },
+              {
+                "stopId": "MOHAMMEDIA",
+                "time": "07:22"
+              },
+              {
+                "stopId": "BOUZNIKA",
+                "time": "07:35"
+              },
+              {
+                "stopId": "SKHIRAT",
+                "time": "07:44"
+              },
+              {
+                "stopId": "TEMARA",
+                "time": "07:54"
+              },
+              {
+                "stopId": "RABAT_AGDAL",
+                "time": "08:04"
+              },
+              {
+                "stopId": "RABAT_VILLE",
+                "time": "08:12"
+              },
+              {
+                "stopId": "SALE",
+                "time": "08:20"
+              },
+              {
+                "stopId": "SALE_TABRIQUET",
+                "time": "08:28"
+              },
+              {
+                "stopId": "KENITRA",
+                "time": "08:45"
+              }
+            ]
+          },
+          {
+            "tripId": "TNR_CASA_KEN_0730",
+            "days": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "stopTimes": [
+              {
+                "stopId": "CASA_PORT",
+                "time": "07:30"
+              },
+              {
+                "stopId": "AIN_SEBAA",
+                "time": "07:42"
+              },
+              {
+                "stopId": "MOHAMMEDIA",
+                "time": "07:52"
+              },
+              {
+                "stopId": "BOUZNIKA",
+                "time": "08:05"
+              },
+              {
+                "stopId": "SKHIRAT",
+                "time": "08:14"
+              },
+              {
+                "stopId": "TEMARA",
+                "time": "08:24"
+              },
+              {
+                "stopId": "RABAT_AGDAL",
+                "time": "08:34"
+              },
+              {
+                "stopId": "RABAT_VILLE",
+                "time": "08:42"
+              },
+              {
+                "stopId": "SALE",
+                "time": "08:50"
+              },
+              {
+                "stopId": "SALE_TABRIQUET",
+                "time": "08:58"
+              },
+              {
+                "stopId": "KENITRA",
+                "time": "09:15"
+              }
+            ]
+          },
+          {
+            "tripId": "TNR_CASA_KEN_0800",
+            "days": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "stopTimes": [
+              {
+                "stopId": "CASA_PORT",
+                "time": "08:00"
+              },
+              {
+                "stopId": "AIN_SEBAA",
+                "time": "08:12"
+              },
+              {
+                "stopId": "MOHAMMEDIA",
+                "time": "08:22"
+              },
+              {
+                "stopId": "BOUZNIKA",
+                "time": "08:35"
+              },
+              {
+                "stopId": "SKHIRAT",
+                "time": "08:44"
+              },
+              {
+                "stopId": "TEMARA",
+                "time": "08:54"
+              },
+              {
+                "stopId": "RABAT_AGDAL",
+                "time": "09:04"
+              },
+              {
+                "stopId": "RABAT_VILLE",
+                "time": "09:12"
+              },
+              {
+                "stopId": "SALE",
+                "time": "09:20"
+              },
+              {
+                "stopId": "SALE_TABRIQUET",
+                "time": "09:28"
+              },
+              {
+                "stopId": "KENITRA",
+                "time": "09:45"
+              }
+            ]
+          },
+          {
+            "tripId": "TNR_CASA_KEN_0830",
+            "days": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "stopTimes": [
+              {
+                "stopId": "CASA_PORT",
+                "time": "08:30"
+              },
+              {
+                "stopId": "AIN_SEBAA",
+                "time": "08:42"
+              },
+              {
+                "stopId": "MOHAMMEDIA",
+                "time": "08:52"
+              },
+              {
+                "stopId": "BOUZNIKA",
+                "time": "09:05"
+              },
+              {
+                "stopId": "SKHIRAT",
+                "time": "09:14"
+              },
+              {
+                "stopId": "TEMARA",
+                "time": "09:24"
+              },
+              {
+                "stopId": "RABAT_AGDAL",
+                "time": "09:34"
+              },
+              {
+                "stopId": "RABAT_VILLE",
+                "time": "09:42"
+              },
+              {
+                "stopId": "SALE",
+                "time": "09:50"
+              },
+              {
+                "stopId": "SALE_TABRIQUET",
+                "time": "09:58"
+              },
+              {
+                "stopId": "KENITRA",
+                "time": "10:15"
+              }
+            ]
+          },
+          {
+            "tripId": "TNR_CASA_KEN_0900",
+            "days": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "stopTimes": [
+              {
+                "stopId": "CASA_PORT",
+                "time": "09:00"
+              },
+              {
+                "stopId": "AIN_SEBAA",
+                "time": "09:12"
+              },
+              {
+                "stopId": "MOHAMMEDIA",
+                "time": "09:22"
+              },
+              {
+                "stopId": "BOUZNIKA",
+                "time": "09:35"
+              },
+              {
+                "stopId": "SKHIRAT",
+                "time": "09:44"
+              },
+              {
+                "stopId": "TEMARA",
+                "time": "09:54"
+              },
+              {
+                "stopId": "RABAT_AGDAL",
+                "time": "10:04"
+              },
+              {
+                "stopId": "RABAT_VILLE",
+                "time": "10:12"
+              },
+              {
+                "stopId": "SALE",
+                "time": "10:20"
+              },
+              {
+                "stopId": "SALE_TABRIQUET",
+                "time": "10:28"
+              },
+              {
+                "stopId": "KENITRA",
+                "time": "10:45"
+              }
+            ]
+          }
+        ]
+      },
+      "fare": {
+        "currency": "MAD",
+        "min": 15,
+        "max": 40,
+        "per": "person"
+      },
+      "paymentModes": [
+        "card",
+        "counter"
+      ],
+      "tier": "cached-verified",
+      "deepLink": {
+        "labelKey": "deepLinks.bookOncf",
+        "url": "https://www.oncf-voyages.ma"
+      },
+      "provenance": {
+        "sourceId": "oncf-community-gtfs",
+        "sourceName": "Rail Maroc Community GTFS (ONCF)",
+        "sourceUrl": "https://github.com/newsbubbles/rail_maroc_oncf",
+        "license": "ODbL-1.0",
+        "method": "community-feed",
+        "lastVerifiedAt": "2026-01-24"
+      }
+    }
+  ]
+}
