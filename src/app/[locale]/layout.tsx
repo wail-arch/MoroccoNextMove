@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Fraunces, Inter, Readex_Pro } from "next/font/google";
 import { notFound } from "next/navigation";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
-import { setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { isRtlLocale, routing } from "@/i18n/routing";
 import { OfflineBanner } from "@/ui/OfflineBanner";
 import { SiteFooter } from "@/ui/SiteFooter";
@@ -32,16 +32,25 @@ const siteUrl =
     ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
     : "http://localhost:3000");
 
-export const metadata: Metadata = {
-  title: {
-    default: "Morocco Next Move",
-    template: "%s · Morocco Next Move",
-  },
-  description:
-    "Know your best next move in Morocco: honest, confidence-rated routes, fares, and arrival guidance — online or offline.",
-  applicationName: "Morocco Next Move",
-  metadataBase: new URL(siteUrl),
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "app" });
+  const tLanding = await getTranslations({ locale, namespace: "landing" });
+
+  return {
+    title: {
+      default: t("fullName"),
+      template: `%s · ${t("fullName")}`,
+    },
+    description: tLanding("heroSub"),
+    applicationName: t("fullName"),
+    metadataBase: new URL(siteUrl),
+  };
+}
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));

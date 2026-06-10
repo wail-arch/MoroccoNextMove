@@ -43,6 +43,7 @@ export function NextMoveCard({
   const t = useTranslations();
   const locale = useLocale();
   const [showSteps, setShowSteps] = useState(false);
+  const arrow = locale === "ar" ? "←" : "→";
 
   const fare = formatFare(move.totalFare, locale);
   const scheduledLeg = move.legs.find((l) => l.departAt);
@@ -214,7 +215,7 @@ export function NextMoveCard({
                   {leg.departAt && (
                     <span className="text-[13px] font-medium text-zellige">
                       {leg.departAt}
-                      {leg.arriveAt ? ` → ${leg.arriveAt}` : ""}
+                      {leg.arriveAt ? ` ${arrow} ${leg.arriveAt}` : ""}
                     </span>
                   )}
                   <span className="text-[13px] text-ink-muted">
@@ -222,7 +223,8 @@ export function NextMoveCard({
                   </span>
                 </div>
                 <p className="mt-0.5 text-[13px] text-ink-muted">
-                  {pickLocale(leg.from.name, locale)} → {pickLocale(leg.to.name, locale)}
+                  {pickLocale(leg.from.name, locale)} {arrow}{" "}
+                  {pickLocale(leg.to.name, locale)}
                 </p>
               </li>
             ))}
