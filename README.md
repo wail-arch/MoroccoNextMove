@@ -1,4 +1,4 @@
-# Next Move by Claude Fable
+# Morocco Next Move
 
 **Know your best next move in Morocco.** A mobile-first, offline-capable travel
 companion that answers one question honestly: *from where you are standing right

@@ -27,7 +27,7 @@ export function SiteFooter() {
       <div className="border-t border-line/60">
         <p className="mx-auto w-full max-w-5xl px-4 py-3 text-[11px] leading-5 text-ink-faint sm:px-6">
           © OpenStreetMap contributors (ODbL) · Rail Maroc Community GTFS (ODbL) ·
-          Next Move by Claude Fable
+          Morocco Next Move
         </p>
       </div>
     </footer>
