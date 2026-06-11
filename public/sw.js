@@ -1,27 +1,22 @@
 /*
  * Next Move service worker.
  *
- * Strategy:
- *  - Hashed build assets (/_next/static, icons): cache-first — immutable.
- *  - Page navigations: network-first; successful responses are cached so
- *    recently visited pages keep working offline; total failure falls back
- *    to the locale's /offline page, where the answer engine runs on the
- *    downloaded city pack.
+ * Deliberately minimal lifecycle: install/activate do no network work, so
+ * they can never hang. The offline shell (pages + asset graph) is written
+ * into CACHE_NAME by the pack-download flow on the page side
+ * (src/lib/packs.ts), which shares Cache API storage with this worker.
+ *
+ * Fetch strategy:
+ *  - Hashed build assets: cache-first (immutable), cached on first use.
+ *  - Navigations: network-first; successful responses cached; total failure
+ *    falls back to the cached page, then the locale's /offline page.
  */
 
-const VERSION = "v1";
-const SHELL_CACHE = `next-move-shell-${VERSION}`;
-const RUNTIME_CACHE = `next-move-runtime-${VERSION}`;
+const VERSION = "v5";
+const CACHE_NAME = `next-move-${VERSION}`;
 
-const OFFLINE_PAGES = ["/offline", "/fr/offline", "/ar/offline"];
-
-self.addEventListener("install", (event) => {
-  event.waitUntil(
-    caches
-      .open(SHELL_CACHE)
-      .then((cache) => cache.addAll(OFFLINE_PAGES))
-      .then(() => self.skipWaiting()),
-  );
+self.addEventListener("install", () => {
+  self.skipWaiting();
 });
 
 self.addEventListener("activate", (event) => {
@@ -30,9 +25,7 @@ self.addEventListener("activate", (event) => {
       .keys()
       .then((keys) =>
         Promise.all(
-          keys
-            .filter((key) => key !== SHELL_CACHE && key !== RUNTIME_CACHE)
-            .map((key) => caches.delete(key)),
+          keys.filter((key) => key !== CACHE_NAME).map((key) => caches.delete(key)),
         ),
       )
       .then(() => self.clients.claim()),
@@ -56,17 +49,25 @@ self.addEventListener("fetch", (event) => {
   if (
     url.pathname.startsWith("/_next/static/") ||
     url.pathname.startsWith("/icon-") ||
-    url.pathname.startsWith("/images/")
+    url.pathname.startsWith("/images/") ||
+    url.pathname === "/manifest.webmanifest" ||
+    url.pathname === "/favicon.ico"
   ) {
     event.respondWith(
       caches.match(request).then(
         (cached) =>
           cached ||
-          fetch(request).then((response) => {
-            const clone = response.clone();
-            caches.open(RUNTIME_CACHE).then((cache) => cache.put(request, clone));
-            return response;
-          }),
+          fetch(request)
+            .then((response) => {
+              if (response.ok) {
+                const clone = response.clone();
+                caches.open(CACHE_NAME).then((cache) => cache.put(request, clone));
+              }
+              return response;
+            })
+            .catch(
+              () => new Response("", { status: 504, statusText: "Offline" }),
+            ),
       ),
     );
     return;
@@ -79,12 +80,12 @@ self.addEventListener("fetch", (event) => {
         .then((response) => {
           if (response.ok) {
             const clone = response.clone();
-            caches.open(RUNTIME_CACHE).then((cache) => cache.put(request, clone));
+            caches.open(CACHE_NAME).then((cache) => cache.put(request, clone));
           }
           return response;
         })
         .catch(async () => {
-          const cached = await caches.match(request);
+          const cached = await caches.match(request, { ignoreSearch: true });
           if (cached) return cached;
           const offline = await caches.match(offlinePageFor(url.pathname));
           return (

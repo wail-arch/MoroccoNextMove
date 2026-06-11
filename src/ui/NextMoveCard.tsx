@@ -106,7 +106,10 @@ export function NextMoveCard({
           </div>
           {fare && (
             <p className="shrink-0 text-end">
-              <span className="block text-base font-bold text-ink">{fare}</span>
+              {/* Fare ranges are LTR ("60–120") even inside RTL text. */}
+              <span dir="ltr" className="block text-base font-bold text-ink">
+                {fare}
+              </span>
             </p>
           )}
         </div>

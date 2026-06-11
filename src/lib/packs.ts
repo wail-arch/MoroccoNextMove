@@ -60,9 +60,10 @@ export async function downloadPack(city: PackCity): Promise<StoredPack> {
   };
   await (await db()).put(STORE, pack);
 
-  // Warm the offline shell + assets while we still have connectivity.
+  // Warm the offline shell + its full asset graph while we still have
+  // connectivity, so the /offline page hydrates with zero network.
   try {
-    await fetch("/offline", { method: "GET" });
+    await warmOfflineAssets();
   } catch {
     // Connectivity already gone — the data pack still made it.
   }
@@ -70,6 +71,97 @@ export async function downloadPack(city: PackCity): Promise<StoredPack> {
   track("pack_download_completed", { city, bytes: pack.sizeBytes });
   notifyChange();
   return pack;
+}
+
+/** Must match CACHE_NAME in public/sw.js — the page and the service worker
+ * share Cache API storage. */
+const SHELL_CACHE = "next-move-v5";
+
+const OFFLINE_PAGES = ["/offline", "/fr/offline", "/ar/offline"];
+const SHELL_EXTRAS = [
+  "/manifest.webmanifest",
+  "/icon-192.png",
+  "/icon-512.png",
+  "/favicon.ico",
+];
+
+async function putInShellCache(
+  cache: Cache,
+  url: string,
+  init?: RequestInit,
+): Promise<void> {
+  try {
+    const response = await fetch(url, init);
+    if (response.ok) {
+      await cache.put(url, response.clone());
+      // A redirected response (e.g. locale cookie redirect) should also be
+      // retrievable under its final URL.
+      if (response.redirected && new URL(response.url).pathname !== url) {
+        await cache.put(new URL(response.url).pathname, response);
+      }
+    }
+  } catch {
+    // One missing asset must not fail the warm-up.
+  }
+}
+
+/**
+ * Writes the offline shell into the shared Cache API from the page side:
+ * the offline pages' HTML, the PWA extras, and — crucially — every asset
+ * the /offline page actually loads. Asset URLs come from loading the page
+ * in a hidden iframe and reading its Performance entries, because parsing
+ * HTML for chunk URLs is unreliable (RSC payloads split strings) and
+ * requests served from the browser's memory cache never reach the service
+ * worker.
+ */
+async function warmOfflineAssets(): Promise<void> {
+  const cache = await caches.open(SHELL_CACHE);
+
+  // Offline page HTML (credentials omitted so the locale cookie can't turn
+  // "/offline" into a redirect we'd cache under the wrong key) + extras.
+  await Promise.all([
+    ...OFFLINE_PAGES.map((page) =>
+      putInShellCache(cache, page, { credentials: "omit" }),
+    ),
+    ...SHELL_EXTRAS.map((url) => putInShellCache(cache, url)),
+  ]);
+
+  // Observe the real asset graph of /offline via a hidden iframe.
+  const iframe = document.createElement("iframe");
+  iframe.style.cssText =
+    "position:absolute;width:1px;height:1px;opacity:0;pointer-events:none;";
+  iframe.src = "/offline";
+
+  try {
+    await new Promise<void>((resolve, reject) => {
+      const timer = setTimeout(() => reject(new Error("warm timeout")), 20_000);
+      iframe.onload = () => {
+        clearTimeout(timer);
+        resolve();
+      };
+      iframe.onerror = () => {
+        clearTimeout(timer);
+        reject(new Error("warm failed"));
+      };
+      document.body.appendChild(iframe);
+    });
+
+    // Let hydration finish so lazily-loaded chunks are requested too.
+    await new Promise((r) => setTimeout(r, 2_500));
+
+    const innerWindow = iframe.contentWindow;
+    if (!innerWindow) return;
+    const urls = innerWindow.performance
+      .getEntriesByType("resource")
+      .map((entry) => (entry as PerformanceResourceTiming).name)
+      .filter((name) => name.includes("/_next/"));
+
+    await Promise.all(
+      urls.map((url) => putInShellCache(cache, url, { cache: "no-cache" })),
+    );
+  } finally {
+    iframe.remove();
+  }
 }
 
 export async function deletePack(city: PackCity): Promise<void> {
