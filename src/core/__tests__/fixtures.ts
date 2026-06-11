@@ -74,6 +74,16 @@ export const places: Place[] = [
     provenance: prov("2026-05-01"),
   },
   {
+    id: "bab-doukkala-gate",
+    kind: "medina-gate",
+    name: name("Bab Doukkala"),
+    city: "marrakech",
+    point: { lat: 31.6336, lon: -7.9947 },
+    inMedina: true,
+    aliases: [],
+    provenance: prov("2026-05-01"),
+  },
+  {
     id: "casa-voyageurs",
     kind: "rail-station",
     name: name("Casa-Voyageurs"),

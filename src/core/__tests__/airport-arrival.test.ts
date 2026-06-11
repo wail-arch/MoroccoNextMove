@@ -22,9 +22,27 @@ describe("airport arrival at night (RAK → medina riad, 23:40)", () => {
     expect(moves[0].reasons).toContain("night-safer");
   });
 
-  it("does not offer the airport bus after its last departure", () => {
+  it("rolls the airport bus over to tomorrow's first departure, ranked below the taxi", () => {
     const moves = rankNextMoves(ctx, snapshot);
-    expect(moves.some((m) => m.headlineMode === "bus")).toBe(false);
+    const busIdx = moves.findIndex((m) => m.headlineMode === "bus");
+    const taxiIdx = moves.findIndex((m) => m.headlineMode === "petit-taxi");
+    expect(busIdx).toBeGreaterThanOrEqual(0);
+    expect(busIdx).toBeGreaterThan(taxiIdx);
+
+    const busLeg = moves[busIdx].legs.find((l) => l.mode === "bus");
+    expect(busLeg?.departAt).toBe("06:30");
+    expect(busLeg?.dayOffset).toBe(1);
+  });
+
+  it("drops the taxi at the medina gate with a verified final walk", () => {
+    const moves = rankNextMoves(ctx, snapshot);
+    const taxi = moves[0];
+    expect(taxi.legs).toHaveLength(2);
+    expect(taxi.legs[0].mode).toBe("petit-taxi");
+    expect(taxi.legs[0].to.name.en).toBe("Bab Doukkala");
+    expect(taxi.legs[1].mode).toBe("walk");
+    // Final approach uses the riad area's verified pin note.
+    expect(taxi.legs[1].walkingNote?.en).toMatch(/mosque/);
   });
 
   it("does not offer a 4 km night walk at all", () => {

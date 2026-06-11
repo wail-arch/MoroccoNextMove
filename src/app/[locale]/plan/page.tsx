@@ -10,7 +10,7 @@ import {
 import { getBaseSnapshot, getIntercityStops } from "@/data";
 import { getPathname } from "@/i18n/navigation";
 import { pickLocale } from "@/lib/locale";
-import { moroccoNow, withDepartureOverride } from "@/lib/time-context";
+import { moroccoNow, shiftDays, withDepartureOverride } from "@/lib/time-context";
 import { Button } from "@/ui/Button";
 import { MoveResults } from "../move/MoveResults";
 
@@ -29,6 +29,7 @@ type SearchParams = Promise<{
   to?: string;
   strategy?: string;
   at?: string;
+  day?: string;
 }>;
 
 const CITY_ORDER: CityId[] = [
@@ -58,8 +59,9 @@ export default async function PlanPage({
   const tCity = await getTranslations("cityNames");
   const tCommon = await getTranslations("common");
 
-  const { from, to, strategy: strategyParam, at } = await searchParams;
+  const { from, to, strategy: strategyParam, at, day } = await searchParams;
   const strategy = asStrategy(strategyParam);
+  const tomorrow = day === "tomorrow";
   const snapshot = getBaseSnapshot();
   const stations = getIntercityStops();
 
@@ -78,7 +80,10 @@ export default async function PlanPage({
         {
           fromStopId: origin!.id,
           toStopId: destination!.id,
-          when: withDepartureOverride(moroccoNow(), at),
+          // Tomorrow searches start at midnight unless a time is given.
+          when: tomorrow
+            ? shiftDays(withDepartureOverride({ ...moroccoNow(), minutes: 0 }, at), 1)
+            : withDepartureOverride(moroccoNow(), at),
         },
         snapshot,
         strategy,
@@ -163,6 +168,34 @@ export default async function PlanPage({
                   className="sr-only"
                 />
                 {t(s)}
+              </label>
+            ))}
+          </div>
+        </fieldset>
+
+        <fieldset className="mt-4">
+          <legend className="mb-1.5 block text-xs font-bold uppercase tracking-[0.12em] text-terracotta">
+            {t("date")}
+          </legend>
+          <div className="grid grid-cols-2 gap-2">
+            {(
+              [
+                { value: "today", labelKey: "dayToday" },
+                { value: "tomorrow", labelKey: "dayTomorrow" },
+              ] as const
+            ).map((option) => (
+              <label
+                key={option.value}
+                className="flex h-11 cursor-pointer items-center justify-center rounded-xl border border-line bg-plaster text-sm font-semibold text-ink-muted transition-colors has-[:checked]:border-zellige has-[:checked]:bg-zellige has-[:checked]:text-white"
+              >
+                <input
+                  type="radio"
+                  name="day"
+                  value={option.value}
+                  defaultChecked={tomorrow === (option.value === "tomorrow")}
+                  className="sr-only"
+                />
+                {t(option.labelKey)}
               </label>
             ))}
           </div>

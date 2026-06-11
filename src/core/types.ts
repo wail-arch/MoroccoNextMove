@@ -346,6 +346,9 @@ export interface Leg {
   /** "HH:MM" local — only for scheduled legs. */
   departAt?: string;
   arriveAt?: string;
+  /** Days after the query day this leg departs (0 = today, 1 = tomorrow).
+   * Set when the next usable service is on a later day. */
+  dayOffset?: number;
   fare?: FareBand;
   paymentModes?: PaymentMode[];
   tier: ConfidenceTier;

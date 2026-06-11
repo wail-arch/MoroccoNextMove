@@ -46,6 +46,7 @@ function rideLeg(
     toStop: Stop;
     departAtMinutes: number;
     arriveAtMinutes: number;
+    dayOffset: number;
   },
   todayIso: string,
 ): Leg {
@@ -67,6 +68,7 @@ function rideLeg(
     operator: line.operator,
     departAt: toHHMM(ride.departAtMinutes),
     arriveAt: toHHMM(ride.arriveAtMinutes),
+    dayOffset: ride.dayOffset > 0 ? ride.dayOffset : undefined,
     fare: line.fare,
     paymentModes: line.paymentModes,
     tier: effectiveTier(line.tier, line.provenance.lastVerifiedAt, todayIso),

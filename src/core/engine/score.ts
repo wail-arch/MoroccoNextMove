@@ -20,6 +20,10 @@ const MAD_TO_MINUTES: Record<BudgetPref, number> = {
 const TRANSFER_PENALTY_MINUTES = 8;
 const NIGHT_LONG_WALK_PENALTY_MINUTES = 25;
 const NIGHT_LONG_WALK_THRESHOLD_M = 500;
+/** An overnight wait is real but the traveler isn't standing at the stop
+ * all night — cap its score contribution so "first bus tomorrow" stays a
+ * ranked (if last) option instead of an absurdity. */
+const MAX_WAIT_PENALTY_MINUTES = 120;
 
 const SEVERITY_PENALTY_MINUTES: Record<AdvisorySeverity, number> = {
   info: 0,
@@ -42,7 +46,8 @@ export interface ScoreInput {
 }
 
 export function computeScore(input: ScoreInput): number {
-  let score = input.durationMinutes + input.waitMinutes;
+  let score =
+    input.durationMinutes + Math.min(input.waitMinutes, MAX_WAIT_PENALTY_MINUTES);
 
   score += input.fareMidMad * MAD_TO_MINUTES[input.budget];
   score += input.transfers * TRANSFER_PENALTY_MINUTES;

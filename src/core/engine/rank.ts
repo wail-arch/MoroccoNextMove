@@ -162,7 +162,7 @@ export function rankNextMoves(
       .reduce((sum, l) => sum + (l.distanceMeters ?? 0), 0);
 
     const score = computeScore({
-      durationMinutes: draft.move.totalDurationMinutes - draft.waitMinutes,
+      durationMinutes: draft.legsDurationMinutes,
       fareMidMad: fareMid(draft.move.totalFare.min, draft.move.totalFare.max),
       transfers: draft.move.transfers,
       walkMeters,

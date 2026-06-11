@@ -19,6 +19,11 @@ import { effectiveTier, oldestDate, weakestTier } from "./confidence";
 /*
  * Candidate builders: each returns raw NextMove drafts (no score, no
  * advisories, no comparative reasons — rank.ts adds those).
+ *
+ * Scheduled times are handled as ABSOLUTE minutes since the query day's
+ * midnight (a 06:30 departure tomorrow is 1830). When today's service has
+ * ended, the search rolls forward up to a week — "first bus tomorrow at
+ * 06:30" is an honest next move; silence is not.
  */
 
 const MAX_WALK_MOVE_METERS = 2_500;
@@ -28,10 +33,14 @@ const TAXI_HAIL_WAIT_MINUTES = 5;
 const TAXI_SPEED_KM_PER_MIN = 0.45; // ~27 km/h urban average
 const NIGHT_FARE_FROM_MINUTES = 20 * 60;
 const NIGHT_FARE_TO_MINUTES = 6 * 60;
+const MAX_ROLLOVER_DAYS = 6;
+const MINUTES_PER_DAY = 1440;
 
 export interface CandidateDraft {
   move: Omit<NextMove, "score" | "advisories" | "reasons">;
   waitMinutes: number;
+  /** Time actually spent traveling (legs only, no wait). */
+  legsDurationMinutes: number;
 }
 
 // ---------------------------------------------------------------------------
@@ -69,12 +78,28 @@ function isMedinaContext(
   );
 }
 
-function pinForDestination(
+function pinForPlace(
   snapshot: DataSnapshot,
   placeId?: string,
 ): VerifiedPin | undefined {
   if (!placeId) return undefined;
   return snapshot.pins.find((pin) => pin.placeId === placeId);
+}
+
+function nearestGate(
+  snapshot: DataSnapshot,
+  point: { lat: number; lon: number },
+  city: CityId,
+): Place | undefined {
+  let best: { place: Place; distance: number } | null = null;
+  for (const place of snapshot.places) {
+    if (place.kind !== "medina-gate" || place.city !== city) continue;
+    const distance = haversineMeters(point, place.point);
+    if (!best || distance < best.distance) {
+      best = { place, distance };
+    }
+  }
+  return best?.place;
 }
 
 function endpointName(
@@ -130,13 +155,17 @@ function assembleMove(
     0,
     legs.filter((l) => l.mode !== "walk").length - 1,
   );
+  const legsDurationMinutes = legs.reduce((sum, l) => sum + l.durationMinutes, 0);
+  // Door-to-door duration includes the wait only when the departure is
+  // today; an overnight wait is real but isn't "travel time" on the card.
+  const sameDay = legs.every((l) => (l.dayOffset ?? 0) === 0);
+
   return {
     move: {
       id,
       headlineMode,
       legs,
-      totalDurationMinutes:
-        legs.reduce((sum, l) => sum + l.durationMinutes, 0) + waitMinutes,
+      totalDurationMinutes: legsDurationMinutes + (sameDay ? waitMinutes : 0),
       totalFare: legs.some((l) => l.fare) ? sumFares(legs) : ZERO_FARE,
       paymentModes: unionPayments(legs),
       tier: weakestTier(legs.map((l) => l.tier)),
@@ -145,6 +174,7 @@ function assembleMove(
       deepLink,
     },
     waitMinutes,
+    legsDurationMinutes,
   };
 }
 
@@ -167,7 +197,7 @@ export function buildWalkCandidate(
   );
   if (distance > MAX_WALK_MOVE_METERS) return null;
 
-  const pin = pinForDestination(snapshot, ctx.destination.placeId);
+  const pin = pinForPlace(snapshot, ctx.destination.placeId);
   const destPlace = placeById(snapshot, ctx.destination.placeId);
 
   // A plain GPS walk into a medina is exactly where navigation fails — be
@@ -205,6 +235,114 @@ export function buildWalkCandidate(
 // Taxi
 // ---------------------------------------------------------------------------
 
+interface TaxiEndpoints {
+  pickup: { point: { lat: number; lon: number }; name: LocalizedString; placeId?: string };
+  dropoff: { point: { lat: number; lon: number }; name: LocalizedString; placeId?: string };
+  walkBefore: Leg | null;
+  walkAfter: Leg | null;
+}
+
+/** Taxis cannot drive into medina alleys: when an endpoint sits inside a
+ * medina, the ride starts/ends at the nearest gate and a walk leg covers
+ * the rest — that's what actually happens on the ground. */
+function resolveTaxiEndpoints(
+  ctx: RankContext,
+  snapshot: DataSnapshot,
+  city: CityId,
+): TaxiEndpoints | null {
+  const originMedina = isMedinaContext(
+    snapshot,
+    ctx.origin.point,
+    ctx.origin.placeId,
+  );
+  const destMedina = isMedinaContext(
+    snapshot,
+    ctx.destination.point,
+    ctx.destination.placeId,
+  );
+
+  const originGate = originMedina
+    ? nearestGate(snapshot, ctx.origin.point, city)
+    : undefined;
+  const destGate = destMedina
+    ? nearestGate(snapshot, ctx.destination.point, city)
+    : undefined;
+
+  // Both endpoints behind the same gate: there is no taxi ride here.
+  if (originGate && destGate && originGate.id === destGate.id) return null;
+
+  const endpoints: TaxiEndpoints = {
+    pickup: {
+      point: ctx.origin.point,
+      name: endpointName(snapshot, ctx.origin.placeId, YOUR_LOCATION),
+      placeId: ctx.origin.placeId,
+    },
+    dropoff: {
+      point: ctx.destination.point,
+      name: endpointName(snapshot, ctx.destination.placeId, DESTINATION),
+      placeId: ctx.destination.placeId,
+    },
+    walkBefore: null,
+    walkAfter: null,
+  };
+
+  if (originGate) {
+    const walkM = walkingDistanceMeters(ctx.origin.point, originGate.point, {
+      medina: true,
+    });
+    endpoints.walkBefore = {
+      mode: "walk",
+      from: { name: endpoints.pickup.name, point: ctx.origin.point },
+      to: { name: originGate.name, point: originGate.point },
+      durationMinutes: walkingMinutes(walkM),
+      distanceMeters: walkM,
+      // Walking OUT to a gate is easy: gates are large, known landmarks.
+      tier: "cached-verified",
+      lastVerifiedAt: originGate.provenance.lastVerifiedAt,
+    };
+    endpoints.pickup = {
+      point: originGate.point,
+      name: originGate.name,
+      placeId: originGate.id,
+    };
+  }
+
+  if (destGate) {
+    const pin =
+      pinForPlace(snapshot, ctx.destination.placeId) ??
+      pinForPlace(snapshot, destGate.id);
+    const walkM = walkingDistanceMeters(
+      destGate.point,
+      ctx.destination.point,
+      { medina: true },
+    );
+    endpoints.walkAfter = {
+      mode: "walk",
+      from: { name: destGate.name, point: destGate.point },
+      to: {
+        name: endpoints.dropoff.name,
+        point:
+          pin && pin.placeId === ctx.destination.placeId
+            ? pin.point
+            : ctx.destination.point,
+      },
+      durationMinutes: walkingMinutes(walkM),
+      distanceMeters: walkM,
+      tier: pin ? pin.tier : "estimated-flagged",
+      lastVerifiedAt:
+        pin?.provenance.lastVerifiedAt ?? destGate.provenance.lastVerifiedAt,
+      walkingNote: pin?.walkingNote,
+    };
+    endpoints.dropoff = {
+      point: destGate.point,
+      name: destGate.name,
+      placeId: destGate.id,
+    };
+  }
+
+  return endpoints;
+}
+
 export function buildTaxiCandidates(
   ctx: RankContext,
   snapshot: DataSnapshot,
@@ -214,12 +352,15 @@ export function buildTaxiCandidates(
     ctx.when.minutes >= NIGHT_FARE_FROM_MINUTES ||
     ctx.when.minutes < NIGHT_FARE_TO_MINUTES;
 
+  const endpoints = resolveTaxiEndpoints(ctx, snapshot, city);
+  if (!endpoints) return [];
+
   const drafts: CandidateDraft[] = [];
   for (const rule of snapshot.taxiRules) {
     if (rule.city !== city) continue;
 
     const roadMeters = Math.round(
-      haversineMeters(ctx.origin.point, ctx.destination.point) * 1.4,
+      haversineMeters(endpoints.pickup.point, endpoints.dropoff.point) * 1.4,
     );
     const km = roadMeters / 1000;
     const band = rule.bands.find((b) => km <= b.maxKm);
@@ -240,16 +381,10 @@ export function buildTaxiCandidates(
       ctx.when.todayIso,
     );
 
-    const leg: Leg = {
+    const taxiLeg: Leg = {
       mode: rule.kind,
-      from: {
-        name: endpointName(snapshot, ctx.origin.placeId, YOUR_LOCATION),
-        point: ctx.origin.point,
-      },
-      to: {
-        name: endpointName(snapshot, ctx.destination.placeId, DESTINATION),
-        point: ctx.destination.point,
-      },
+      from: { name: endpoints.pickup.name, point: endpoints.pickup.point },
+      to: { name: endpoints.dropoff.name, point: endpoints.dropoff.point },
       durationMinutes: rideMinutes,
       distanceMeters: roadMeters,
       fare,
@@ -258,8 +393,14 @@ export function buildTaxiCandidates(
       lastVerifiedAt: rule.provenance.lastVerifiedAt,
     };
 
+    const legs = [
+      ...(endpoints.walkBefore ? [endpoints.walkBefore] : []),
+      taxiLeg,
+      ...(endpoints.walkAfter ? [endpoints.walkAfter] : []),
+    ];
+
     drafts.push(
-      assembleMove(`taxi-${rule.id}`, rule.kind, [leg], TAXI_HAIL_WAIT_MINUTES),
+      assembleMove(`taxi-${rule.id}`, rule.kind, legs, TAXI_HAIL_WAIT_MINUTES),
     );
   }
   return drafts;
@@ -272,8 +413,10 @@ export function buildTaxiCandidates(
 interface BoardingPlan {
   fromStop: Stop;
   toStop: Stop;
+  /** Absolute minutes since the query day's midnight (may exceed 1440). */
   departAtMinutes: number;
   arriveAtMinutes: number;
+  dayOffset: number;
   tripId?: string;
   headwayMinutes?: number;
 }
@@ -282,22 +425,24 @@ function stopById(snapshot: DataSnapshot, id: string): Stop | undefined {
   return snapshot.stops.find((s) => s.id === id);
 }
 
-/** Earliest usable ride on `line` between two stops after `earliest`
- * (minutes since midnight), or null when none runs today. */
-export function nextRide(
+interface DayRide {
+  departAtMinutes: number;
+  arriveAtMinutes: number;
+  tripId?: string;
+  headwayMinutes?: number;
+}
+
+/** Earliest ride on `line` between two stop indexes on one service day,
+ * with `earliestMinutes` relative to that day's midnight. */
+function rideOnServiceDay(
   line: Line,
+  fromStopId: string,
+  toStopId: string,
   fromStopIdx: number,
   toStopIdx: number,
   earliestMinutes: number,
   dayOfWeek: number,
-  snapshot: DataSnapshot,
-): BoardingPlan | null {
-  const fromStopId = line.stopIds[fromStopIdx];
-  const toStopId = line.stopIds[toStopIdx];
-  const fromStop = stopById(snapshot, fromStopId);
-  const toStop = stopById(snapshot, toStopId);
-  if (!fromStop || !toStop) return null;
-
+): DayRide | null {
   if (line.service.kind === "headway") {
     const svc = line.service;
     if (!runsOnDay(svc.days, dayOfWeek)) return null;
@@ -312,8 +457,6 @@ export function nextRide(
 
     const hops = Math.abs(toStopIdx - fromStopIdx);
     return {
-      fromStop,
-      toStop,
       departAtMinutes: departAt,
       arriveAtMinutes: departAt + hops * svc.minutesBetweenStops,
       headwayMinutes: svc.headwayMinutes,
@@ -321,7 +464,7 @@ export function nextRide(
   }
 
   // Timetable service: trips encode direction via stop order.
-  let best: BoardingPlan | null = null;
+  let best: DayRide | null = null;
   for (const trip of line.service.trips) {
     if (!runsOnDay(trip.days, dayOfWeek)) continue;
     const fromIdx = trip.stopTimes.findIndex((st) => st.stopId === fromStopId);
@@ -333,16 +476,54 @@ export function nextRide(
 
     const arriveAt = parseHHMM(trip.stopTimes[toIdx].time);
     if (!best || departAt < best.departAtMinutes) {
-      best = {
-        fromStop,
-        toStop,
-        departAtMinutes: departAt,
-        arriveAtMinutes: arriveAt,
-        tripId: trip.tripId,
-      };
+      best = { departAtMinutes: departAt, arriveAtMinutes: arriveAt, tripId: trip.tripId };
     }
   }
   return best;
+}
+
+/** Earliest usable ride on `line` between two stops at or after
+ * `earliestMinutes` (absolute), rolling over to later service days when
+ * today's departures are exhausted. */
+export function nextRide(
+  line: Line,
+  fromStopIdx: number,
+  toStopIdx: number,
+  earliestMinutes: number,
+  dayOfWeek: number,
+  snapshot: DataSnapshot,
+): BoardingPlan | null {
+  const fromStopId = line.stopIds[fromStopIdx];
+  const toStopId = line.stopIds[toStopIdx];
+  const fromStop = stopById(snapshot, fromStopId);
+  const toStop = stopById(snapshot, toStopId);
+  if (!fromStop || !toStop) return null;
+
+  for (let dayOffset = 0; dayOffset <= MAX_ROLLOVER_DAYS; dayOffset++) {
+    const dayStart = dayOffset * MINUTES_PER_DAY;
+    const earliestWithinDay = Math.max(0, earliestMinutes - dayStart);
+    const ride = rideOnServiceDay(
+      line,
+      fromStopId,
+      toStopId,
+      fromStopIdx,
+      toStopIdx,
+      earliestWithinDay,
+      (dayOfWeek + dayOffset) % 7,
+    );
+    if (ride) {
+      return {
+        fromStop,
+        toStop,
+        departAtMinutes: ride.departAtMinutes + dayStart,
+        arriveAtMinutes: ride.arriveAtMinutes + dayStart,
+        dayOffset,
+        tripId: ride.tripId,
+        headwayMinutes: ride.headwayMinutes,
+      };
+    }
+  }
+  return null;
 }
 
 export function buildTransitCandidates(
@@ -443,6 +624,7 @@ export function buildTransitCandidates(
       operator: line.operator,
       departAt: toHHMM(ride.departAtMinutes),
       arriveAt: toHHMM(ride.arriveAtMinutes),
+      dayOffset: ride.dayOffset > 0 ? ride.dayOffset : undefined,
       fare: line.fare,
       paymentModes: line.paymentModes,
       tier: lineTier,
@@ -450,7 +632,7 @@ export function buildTransitCandidates(
     });
 
     if (alighting.walkM > 50) {
-      const pin = pinForDestination(snapshot, ctx.destination.placeId);
+      const pin = pinForPlace(snapshot, ctx.destination.placeId);
       const medina = isMedinaContext(
         snapshot,
         ctx.destination.point,
@@ -480,9 +662,10 @@ export function buildTransitCandidates(
       0,
       ride.departAtMinutes - ctx.when.minutes - walkToStopMin,
     );
-    if (ride.headwayMinutes) {
+    if (ride.headwayMinutes && ride.dayOffset === 0) {
       // Frequent services shouldn't be punished for grid alignment: cap the
-      // perceived wait at one headway.
+      // perceived wait at one headway — but only when the service is still
+      // running today. An overnight wait is real.
       waitMinutes = Math.min(waitMinutes, ride.headwayMinutes);
     }
 

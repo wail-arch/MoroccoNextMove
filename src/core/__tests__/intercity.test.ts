@@ -42,6 +42,28 @@ describe("intercity Casablanca → Marrakech at 08:00", () => {
   });
 });
 
+describe("intercity after the last departure (Casablanca → Marrakech at 23:00)", () => {
+  const query = {
+    fromStopId: "CASA_VOYAGEURS",
+    toStopId: "MARRAKECH",
+    when: at(23 * 60),
+  };
+
+  it("rolls over to tomorrow's first train instead of going silent", () => {
+    const moves = planIntercity(query, snapshot, "fastest");
+    expect(moves.length).toBeGreaterThan(0);
+    const leg = moves[0].legs[0];
+    expect(leg.departAt).toBe("08:50");
+    expect(leg.dayOffset).toBe(1);
+  });
+
+  it("keeps the journey duration to the ride itself, not the overnight wait", () => {
+    const moves = planIntercity(query, snapshot, "fastest");
+    // 08:50 → 11:50 is 3 hours, regardless of the 23:00 query time.
+    expect(moves[0].totalDurationMinutes).toBe(180);
+  });
+});
+
 describe("intercity with a transfer (Tanger → Marrakech at 07:30)", () => {
   const query = {
     fromStopId: "TANGER_VILLE",

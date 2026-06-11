@@ -48,3 +48,18 @@ export function withDepartureOverride(
   if (h > 23 || m > 59) return when;
   return { ...when, minutes: h * 60 + m };
 }
+
+/** Move the query day forward by `days` (e.g. planning for tomorrow). */
+export function shiftDays(
+  when: RankContext["when"],
+  days: number,
+): RankContext["when"] {
+  if (days === 0) return when;
+  const date = new Date(`${when.todayIso}T12:00:00Z`);
+  date.setUTCDate(date.getUTCDate() + days);
+  return {
+    dayOfWeek: (((when.dayOfWeek + days) % 7) + 7) % 7,
+    minutes: when.minutes,
+    todayIso: date.toISOString().slice(0, 10),
+  };
+}

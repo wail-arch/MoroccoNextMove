@@ -49,6 +49,12 @@ export function NextMoveCard({
   const scheduledLeg = move.legs.find((l) => l.departAt);
   const walkingNoteLeg = move.legs.find((l) => l.walkingNote);
 
+  function departureLabel(time: string, dayOffset?: number): string {
+    if (!dayOffset || dayOffset === 0) return t("card.departs", { time });
+    if (dayOffset === 1) return t("card.departsTomorrow", { time });
+    return t("card.departsInDays", { time, count: dayOffset });
+  }
+
   return (
     <article
       className={cn(
@@ -97,8 +103,15 @@ export function NextMoveCard({
               {scheduledLeg?.departAt && (
                 <>
                   <span aria-hidden>·</span>
-                  <span className="font-medium text-zellige">
-                    {t("card.departs", { time: scheduledLeg.departAt })}
+                  <span
+                    className={cn(
+                      "font-medium",
+                      scheduledLeg.dayOffset
+                        ? "text-tier-cached"
+                        : "text-zellige",
+                    )}
+                  >
+                    {departureLabel(scheduledLeg.departAt, scheduledLeg.dayOffset)}
                   </span>
                 </>
               )}
@@ -219,6 +232,11 @@ export function NextMoveCard({
                     <span className="text-[13px] font-medium text-zellige">
                       {leg.departAt}
                       {leg.arriveAt ? ` ${arrow} ${leg.arriveAt}` : ""}
+                      {leg.dayOffset ? (
+                        <span className="ms-1 rounded bg-tier-cached-soft px-1 text-[10px] font-bold text-tier-cached">
+                          +{leg.dayOffset}
+                        </span>
+                      ) : null}
                     </span>
                   )}
                   <span className="text-[13px] text-ink-muted">
