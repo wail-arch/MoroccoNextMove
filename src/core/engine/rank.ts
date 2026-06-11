@@ -40,6 +40,17 @@ function matchAdvisories(
   return snapshot.advisories.filter((advisory) => {
     const { modes, cities, placeIds, hours } = advisory.appliesTo;
 
+    // Dated notices (disruptions) only apply inside their window.
+    if (advisory.activeBetween) {
+      const today = ctx.when.todayIso;
+      if (
+        today < advisory.activeBetween.fromIso ||
+        today > advisory.activeBetween.toIso
+      ) {
+        return false;
+      }
+    }
+
     if (modes && !modes.some((m) => moveModes.has(m))) return false;
     if (cities && !cities.includes(city)) return false;
     if (placeIds && !placeIds.some((id) => movePlaceIds.has(id))) return false;

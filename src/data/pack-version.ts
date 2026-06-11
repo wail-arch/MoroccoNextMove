@@ -1,5 +1,5 @@
 /** Bump when seed content changes so clients silently re-sync their packs. */
-export const PACK_VERSION = "2026-06-11.1";
+export const PACK_VERSION = "2026-06-11.2";
 
 export const PACK_CITIES = ["marrakech"] as const;
 export type PackCity = (typeof PACK_CITIES)[number];

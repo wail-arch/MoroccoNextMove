@@ -270,6 +270,16 @@ export type AdvisorySeverity = z.infer<typeof AdvisorySeveritySchema>;
 export const AdvisoryNoteSchema = z.object({
   id: z.string(),
   severity: AdvisorySeveritySchema,
+  /** "disruption" marks dated service notices (works, strikes, seasonal
+   * timetables) — rendered more loudly and filtered by activeBetween. */
+  kind: z.enum(["advisory", "disruption"]).optional(),
+  /** Only surface between these dates (inclusive, ISO YYYY-MM-DD). */
+  activeBetween: z
+    .object({
+      fromIso: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
+      toIso: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
+    })
+    .optional(),
   appliesTo: z.object({
     modes: z.array(TransportModeSchema).optional(),
     cities: z.array(CityIdSchema).optional(),

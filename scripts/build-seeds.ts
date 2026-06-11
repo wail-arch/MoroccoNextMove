@@ -40,7 +40,7 @@ const PROVENANCE: Provenance = {
   sourceUrl: "https://github.com/newsbubbles/rail_maroc_oncf",
   license: "ODbL-1.0",
   method: "community-feed",
-  lastVerifiedAt: "2026-01-24",
+  lastVerifiedAt: "2026-06-11",
 };
 
 // ---------------------------------------------------------------------------

@@ -7,6 +7,7 @@ import { CITY_GUIDES, getCityGuide } from "@/data/cities-content";
 import { Link } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
 import { pickLocale } from "@/lib/locale";
+import { moroccoNow } from "@/lib/time-context";
 import { AdvisoryStrip } from "@/ui/AdvisoryStrip";
 
 export function generateStaticParams() {
@@ -49,7 +50,15 @@ export default async function CityPage({
   const cityPlaceIds = new Set(
     snapshot.places.filter((p) => p.city === city.cityId).map((p) => p.id),
   );
+  const { todayIso } = moroccoNow();
   const advisories = snapshot.advisories.filter((a) => {
+    // Dated notices only inside their window.
+    if (
+      a.activeBetween &&
+      (todayIso < a.activeBetween.fromIso || todayIso > a.activeBetween.toIso)
+    ) {
+      return false;
+    }
     if (a.appliesTo.cities?.includes(city.cityId)) return true;
     if (a.appliesTo.placeIds?.some((id) => cityPlaceIds.has(id))) return true;
     return false;

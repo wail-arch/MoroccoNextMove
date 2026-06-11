@@ -86,6 +86,16 @@ export const places: Place[] = [
     aliases: ["Sale"],
     provenance: osm("2026-05-15"),
   },
+  {
+    id: "bab-el-had",
+    kind: "medina-gate",
+    name: L("Bab El Had", "Bab El Had", "باب الحد"),
+    city: "rabat",
+    point: { lat: 34.0207, lon: -6.8443 },
+    inMedina: true,
+    aliases: ["Bab Had"],
+    provenance: osm("2026-06-11"),
+  },
 ];
 
 export const pins: VerifiedPin[] = [
@@ -166,7 +176,7 @@ export const lines: Line[] = [
     paymentModes: ["cash", "card"],
     tier: "cached-verified",
     provenance: transcribed(
-      "2026-05-10",
+      "2026-06-11",
       "tram-way.ma official timetable & fares",
       "https://www.tram-way.ma",
     ),
@@ -189,7 +199,7 @@ export const lines: Line[] = [
     paymentModes: ["cash", "card"],
     tier: "cached-verified",
     provenance: transcribed(
-      "2026-05-10",
+      "2026-06-11",
       "tram-way.ma official timetable & fares",
       "https://www.tram-way.ma",
     ),

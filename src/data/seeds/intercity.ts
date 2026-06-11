@@ -77,6 +77,27 @@ function addHours(hhmm: string, hours: number): string {
 
 export const advisories: AdvisoryNote[] = [
   {
+    // Expired on purpose: proves the dated-notice mechanism end to end.
+    // Real disruptions get added here with a current window.
+    id: "disruption-oncf-ramadan-2026",
+    kind: "disruption",
+    severity: "caution",
+    activeBetween: { fromIso: "2026-02-17", toIso: "2026-03-19" },
+    appliesTo: { modes: ["train"] },
+    title: L(
+      "Ramadan timetable in effect",
+      "Horaires de Ramadan en vigueur",
+      "مواعيد رمضان سارية",
+    ),
+    body: L(
+      "ONCF runs a reduced Ramadan schedule: fewer evening departures and shifted last trains. Check oncf.ma before planning an after-iftar journey.",
+      "L'ONCF applique un horaire de Ramadan réduit : moins de départs en soirée et derniers trains décalés. Vérifiez oncf.ma avant un trajet après l'iftar.",
+      "تعتمد ONCF جدول رمضان المخفف: رحلات مسائية أقل وقطارات أخيرة بمواعيد مغايرة. راجع oncf.ma قبل التخطيط لرحلة بعد الإفطار.",
+    ),
+    tier: "cached-verified",
+    provenance: editorial("2026-06-11"),
+  },
+  {
     id: "adv-oncf-delay-comms",
     severity: "info",
     appliesTo: { modes: ["train"] },

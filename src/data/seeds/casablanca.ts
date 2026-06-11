@@ -102,6 +102,20 @@ export const places: Place[] = [
     aliases: ["corniche", "beach"],
     provenance: osm("2026-05-15"),
   },
+  {
+    id: "bab-marrakech-casa",
+    kind: "medina-gate",
+    name: L(
+      "Bab Marrakech (Old Medina)",
+      "Bab Marrakech (Ancienne Médina)",
+      "باب مراكش (المدينة القديمة)",
+    ),
+    city: "casablanca",
+    point: { lat: 33.5993, lon: -7.6204 },
+    inMedina: true,
+    aliases: [],
+    provenance: osm("2026-06-11"),
+  },
 ];
 
 export const pins: VerifiedPin[] = [
@@ -228,7 +242,7 @@ export const lines: Line[] = [
     paymentModes: ["cash", "card"],
     tier: "cached-verified",
     provenance: transcribed(
-      "2026-05-10",
+      "2026-06-11",
       "Casatramway official network map & fares",
       "https://www.casatramway.ma",
     ),
@@ -251,7 +265,7 @@ export const lines: Line[] = [
     paymentModes: ["cash", "card"],
     tier: "cached-verified",
     provenance: transcribed(
-      "2026-05-10",
+      "2026-06-11",
       "Casatramway official network map & fares",
       "https://www.casatramway.ma",
     ),

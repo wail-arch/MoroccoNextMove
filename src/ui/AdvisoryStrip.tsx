@@ -1,5 +1,5 @@
 import { useLocale } from "next-intl";
-import { Info, ShieldAlert, TriangleAlert } from "lucide-react";
+import { Info, Megaphone, ShieldAlert, TriangleAlert } from "lucide-react";
 import type { AdvisoryNote, AdvisorySeverity } from "@/core/types";
 import { cn } from "@/lib/cn";
 import { pickLocale } from "@/lib/locale";
@@ -33,12 +33,19 @@ export function AdvisoryStrip({
   className?: string;
 }) {
   const locale = useLocale();
-  const { box, icon: Icon, iconColor } = SEVERITY_STYLES[advisory.severity];
+  const styles = SEVERITY_STYLES[advisory.severity];
+  const isDisruption = advisory.kind === "disruption";
+  // Dated service notices shout louder than evergreen advice.
+  const Icon = isDisruption ? Megaphone : styles.icon;
+  const box = isDisruption ? "border-terracotta/50 bg-terracotta-soft" : styles.box;
+  const iconColor = isDisruption ? "text-terracotta" : styles.iconColor;
 
   return (
     <div
       className={cn("flex gap-2.5 rounded-xl border p-3", box, className)}
-      role={advisory.severity === "warning" ? "alert" : "note"}
+      role={
+        advisory.severity === "warning" || isDisruption ? "alert" : "note"
+      }
     >
       <Icon className={cn("mt-0.5 h-4 w-4 shrink-0", iconColor)} aria-hidden />
       <div className="min-w-0 text-sm leading-5">
