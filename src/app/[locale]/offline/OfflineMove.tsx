@@ -24,7 +24,8 @@ export function OfflineMove() {
   const packs = usePacks();
   const searchParams = useSearchParams();
 
-  const pack = packs[0];
+  const [packCity, setPackCity] = useState<string | null>(null);
+  const pack = packs.find((p) => p.city === packCity) ?? packs[0];
   // Saved offline moves deep-link back here with ?from&to prefilled.
   const [from, setFrom] = useState(searchParams.get("from") ?? "");
   const [to, setTo] = useState(searchParams.get("to") ?? "");
@@ -74,6 +75,31 @@ export function OfflineMove() {
 
   return (
     <div className="grid gap-6">
+      {packs.length > 1 && (
+        <div className="flex flex-wrap gap-2" role="group">
+          {packs.map((p) => (
+            <button
+              key={p.city}
+              type="button"
+              onClick={() => {
+                setPackCity(p.city);
+                setFrom("");
+                setTo("");
+                setMoves(null);
+              }}
+              aria-pressed={p.city === pack.city}
+              className={
+                p.city === pack.city
+                  ? "rounded-full bg-zellige px-4 py-2 text-sm font-semibold text-white"
+                  : "rounded-full border border-line bg-card px-4 py-2 text-sm font-semibold text-ink-muted hover:text-ink"
+              }
+            >
+              {t(`cityNames.${p.city}`)}
+            </button>
+          ))}
+        </div>
+      )}
+
       <p className="text-[13px] text-ink-faint">
         {t("offline.usingPack", {
           city: t(`cityNames.${pack.city}`),

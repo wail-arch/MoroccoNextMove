@@ -13,7 +13,8 @@
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "test:watch": "vitest",
-    "seeds": "tsx scripts/build-seeds.ts"
+    "seeds": "tsx scripts/build-seeds.ts",
+    "test:e2e": "playwright test"
   },
   "dependencies": {
     "d3-geo": "^3.1.1",
@@ -29,6 +30,7 @@
     "zod": "^4.4.3"
   },
   "devDependencies": {
+    "@playwright/test": "^1.60.0",
     "@tailwindcss/postcss": "^4",
     "@types/d3-geo": "^3.1.0",
     "@types/node": "^20",

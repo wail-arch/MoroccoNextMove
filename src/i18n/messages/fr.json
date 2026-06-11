@@ -201,7 +201,8 @@
     "included4": "Le même moteur de classement — les réponses sont calculées sur votre téléphone",
     "installTitle": "Ajoutez à l'écran d'accueil",
     "installBody": "Les web apps installées ont un stockage protégé sur iPhone — Safari n'effacera pas votre pack entre deux utilisations. Dans Safari : Partager → Sur l'écran d'accueil. Dans Chrome : Installer l'application.",
-    "downloadFailed": "Échec du téléchargement — vérifiez votre connexion et réessayez."
+    "downloadFailed": "Échec du téléchargement — vérifiez votre connexion et réessayez.",
+    "installButton": "Installer l'application"
   },
   "offline": {
     "title": "Mode hors ligne",

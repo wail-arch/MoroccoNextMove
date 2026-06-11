@@ -186,6 +186,14 @@ export async function syncPackIfStale(city: PackCity): Promise<void> {
   }
 }
 
+/** Verify-on-open across every downloaded pack. */
+export async function syncAllPacksIfStale(): Promise<void> {
+  const { PACK_CITIES } = await import("@/data/pack-version");
+  for (const city of PACK_CITIES) {
+    await syncPackIfStale(city);
+  }
+}
+
 // ---------------------------------------------------------------------------
 // React subscription
 // ---------------------------------------------------------------------------

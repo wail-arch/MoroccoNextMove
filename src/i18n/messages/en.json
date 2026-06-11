@@ -201,7 +201,8 @@
     "included4": "The same ranking engine — answers are computed on your phone",
     "installTitle": "Add to your home screen",
     "installBody": "Installed web apps get protected storage on iPhone — Safari won't evict your pack between uses. In Safari: Share → Add to Home Screen. In Chrome: Install app.",
-    "downloadFailed": "Download failed — check your connection and try again."
+    "downloadFailed": "Download failed — check your connection and try again.",
+    "installButton": "Install the app"
   },
   "offline": {
     "title": "Offline mode",

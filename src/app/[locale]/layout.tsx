@@ -49,6 +49,15 @@ export async function generateMetadata({
     description: tLanding("heroSub"),
     applicationName: t("fullName"),
     metadataBase: new URL(siteUrl),
+    icons: {
+      apple: "/apple-touch-icon.png",
+    },
+  };
+}
+
+export function generateViewport() {
+  return {
+    themeColor: "#0e5a4e",
   };
 }
 

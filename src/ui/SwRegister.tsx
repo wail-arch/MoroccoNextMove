@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-import { syncPackIfStale } from "@/lib/packs";
+import { syncAllPacksIfStale } from "@/lib/packs";
 
 export function SwRegister() {
   useEffect(() => {
@@ -11,7 +11,7 @@ export function SwRegister() {
       });
     }
     // Verify-on-open: refresh stale packs while we have connectivity.
-    void syncPackIfStale("marrakech");
+    void syncAllPacksIfStale();
   }, []);
 
   return null;

@@ -118,7 +118,7 @@ export const CITY_GUIDES: CityGuide[] = [
         to: "ain-diab",
       },
     ],
-    hasOfflinePack: false,
+    hasOfflinePack: true,
     imageSlot: "city-casablanca",
   },
   {
@@ -165,7 +165,7 @@ export const CITY_GUIDES: CityGuide[] = [
         to: "sale-medina",
       },
     ],
-    hasOfflinePack: false,
+    hasOfflinePack: true,
     imageSlot: "city-rabat",
   },
 ];

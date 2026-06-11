@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { CheckCircle2, Smartphone } from "lucide-react";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { PACK_CITIES } from "@/data/pack-version";
+import { InstallButton } from "./InstallButton";
 import { PackManager } from "./PackManager";
 
 export async function generateMetadata({
@@ -40,8 +42,10 @@ export default async function PacksPage({
         </p>
       </header>
 
-      <div className="mt-6">
-        <PackManager city="marrakech" />
+      <div className="mt-6 grid gap-4">
+        {PACK_CITIES.map((city) => (
+          <PackManager key={city} city={city} />
+        ))}
       </div>
 
       <section className="mt-6 rounded-2xl border border-line bg-card p-5">
@@ -61,6 +65,7 @@ export default async function PacksPage({
         <div>
           <h2 className="text-sm font-bold text-ink">{t("installTitle")}</h2>
           <p className="mt-1 text-sm leading-6 text-ink-muted">{t("installBody")}</p>
+          <InstallButton />
         </div>
       </section>
     </main>

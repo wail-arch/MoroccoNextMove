@@ -48,6 +48,9 @@ npm run test       # engine fixture suites (vitest)
 npm run typecheck
 npm run lint
 npm run build && npm run start
+
+# end-to-end (offline drill; once per machine: npx playwright install chromium)
+npm run build && npm run test:e2e
 ```
 
 ## Data & licensing
