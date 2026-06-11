@@ -15,6 +15,15 @@ export interface SavedMove {
   fromLabel: string;
   toLabel: string;
   move: NextMove;
+  /** Enough to recompute with fresh schedules. Absent on entries saved
+   * before this field existed — those simply don't offer re-check. */
+  query?: {
+    source: "move" | "plan";
+    fromId?: string;
+    toId?: string;
+    budget?: string;
+    strategy?: string;
+  };
 }
 
 const STORAGE_KEY = "next-move:saved-v1";

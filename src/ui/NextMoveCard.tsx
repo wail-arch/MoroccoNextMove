@@ -8,6 +8,7 @@ import {
   ChevronDown,
   ChevronUp,
   ExternalLink,
+  Flag,
   MapPin,
 } from "lucide-react";
 import type { NextMove } from "@/core/types";
@@ -48,6 +49,23 @@ export function NextMoveCard({
   const fare = formatFare(move.totalFare, locale);
   const scheduledLeg = move.legs.find((l) => l.departAt);
   const walkingNoteLeg = move.legs.find((l) => l.walkingNote);
+
+  function reportUrl(): string {
+    const fromName = pickLocale(move.legs[0].from.name, locale);
+    const toName = pickLocale(move.legs[move.legs.length - 1].to.name, locale);
+    const title = `[report] ${fromName} → ${toName} (${move.headlineMode})`;
+    const body = [
+      `**Move:** ${move.id}`,
+      `**Route:** ${fromName} → ${toName}`,
+      `**Confidence tier:** ${move.tier} (last verified ${move.lastVerifiedAt})`,
+      `**Locale:** ${locale}`,
+      "",
+      "**What's wrong?** (wrong time / wrong fare / wrong pin / other)",
+      "",
+    ].join("\n");
+    const params = new URLSearchParams({ title, body, labels: "data-report" });
+    return `https://github.com/wail-arch/MoroccoNextMove/issues/new?${params.toString()}`;
+  }
 
   function departureLabel(time: string, dayOffset?: number): string {
     if (!dayOffset || dayOffset === 0) return t("card.departs", { time });
@@ -213,6 +231,16 @@ export function NextMoveCard({
               )}
             </Button>
           )}
+          <a
+            href={reportUrl()}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => track("move_report_click", { move: move.id })}
+            className="ms-auto inline-flex h-9 items-center gap-1.5 rounded-lg px-2 text-[12px] font-semibold text-ink-faint transition-colors hover:text-terracotta"
+          >
+            <Flag className="h-3.5 w-3.5" aria-hidden />
+            {t("card.report")}
+          </a>
         </div>
 
         {/* Step-by-step legs */}

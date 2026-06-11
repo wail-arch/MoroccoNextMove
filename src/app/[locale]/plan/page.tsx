@@ -230,6 +230,12 @@ export default async function PlanPage({
               fromLabel={pickLocale(origin!.name, locale)}
               toLabel={pickLocale(destination!.name, locale)}
               trackEvent="plan_search"
+              query={{
+                source: "plan",
+                fromId: origin!.id,
+                toId: destination!.id,
+                strategy,
+              }}
             />
           ) : (
             <div className="rounded-2xl border border-line bg-card p-6 text-center text-sm leading-6 text-ink-muted">

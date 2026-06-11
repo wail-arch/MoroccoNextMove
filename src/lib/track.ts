@@ -10,6 +10,7 @@ export type TrackEvent =
   | "move_tap_through"
   | "move_deeplink_click"
   | "move_saved"
+  | "move_report_click"
   | "plan_search"
   | "plan_deeplink_click"
   | "pack_download_started"

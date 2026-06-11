@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import { useFormatter, useLocale, useTranslations } from "next-intl";
 import { Navigation, WifiOff } from "lucide-react";
 import { rankNextMoves } from "@/core/engine/rank";
@@ -21,10 +22,12 @@ export function OfflineMove() {
   const locale = useLocale();
   const format = useFormatter();
   const packs = usePacks();
+  const searchParams = useSearchParams();
 
   const pack = packs[0];
-  const [from, setFrom] = useState("");
-  const [to, setTo] = useState("");
+  // Saved offline moves deep-link back here with ?from&to prefilled.
+  const [from, setFrom] = useState(searchParams.get("from") ?? "");
+  const [to, setTo] = useState(searchParams.get("to") ?? "");
   const [budget, setBudget] = useState<BudgetPref>("mid");
   const [moves, setMoves] = useState<NextMove[] | null>(null);
 

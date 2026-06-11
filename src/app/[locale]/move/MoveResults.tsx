@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 import type { NextMove } from "@/core/types";
-import { removeMove, saveMove, useSavedMoves } from "@/lib/saved";
+import { removeMove, saveMove, useSavedMoves, type SavedMove } from "@/lib/saved";
 import { track } from "@/lib/track";
 import { NextMoveCard } from "@/ui/NextMoveCard";
 
@@ -11,11 +11,13 @@ export function MoveResults({
   fromLabel,
   toLabel,
   trackEvent,
+  query,
 }: {
   moves: NextMove[];
   fromLabel: string;
   toLabel: string;
   trackEvent: "move_result_shown" | "plan_search";
+  query?: SavedMove["query"];
 }) {
   const saved = useSavedMoves();
   const savedIds = new Set(saved.map((s) => s.id));
@@ -32,7 +34,7 @@ export function MoveResults({
     if (savedIds.has(id)) {
       removeMove(id);
     } else {
-      saveMove({ id, fromLabel, toLabel, move });
+      saveMove({ id, fromLabel, toLabel, move, query });
       track("move_saved", { move: move.id });
     }
   }

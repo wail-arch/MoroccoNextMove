@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { OfflineMove } from "./OfflineMove";
 
@@ -31,7 +32,9 @@ export default async function OfflinePage({
           {t("subtitle")}
         </p>
       </header>
-      <OfflineMove />
+      <Suspense fallback={null}>
+        <OfflineMove />
+      </Suspense>
     </main>
   );
 }

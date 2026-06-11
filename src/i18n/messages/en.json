@@ -87,6 +87,7 @@
     "fareNote": "Fares are honest ranges, not promises.",
     "saveMove": "Save this move",
     "savedMove": "Saved",
+    "report": "Report a problem",
     "noMoves": "No reliable option found for this trip right now. Try a nearby starting point, or check the city page for arrival guidance.",
     "showAlternatives": "{count, plural, one {# more option} other {# more options}}"
   },
@@ -107,8 +108,16 @@
     "budgetPremium": "Premium",
     "timeNow": "Leaving now",
     "pickPlace": "Choose a place…",
+    "searchPlace": "Search a place, station, or area…",
     "resultsFor": "Next moves from {from} to {to}",
-    "departureTime": "Departure time"
+    "departureTime": "Departure time",
+    "myLocation": "My location",
+    "useMyLocation": "Use my location",
+    "locating": "Locating…",
+    "locationDenied": "Location access was denied — pick your spot manually.",
+    "locationFar": "You seem to be outside our covered cities. Pick the place you're heading from instead.",
+    "unknownPlaceHint": "We don't pin individual riads or hotels yet. Pick its area instead — the verified gate notes cover the final approach.",
+    "noMatches": "No exact match. Closest areas:"
   },
   "plan": {
     "title": "Plan a route",
@@ -130,7 +139,9 @@
     "subtitle": "Stored on this device — they work offline.",
     "empty": "Nothing saved yet. Save a move from the results and it will wait here, offline included.",
     "savedAt": "Saved {date}",
-    "clearAll": "Remove all"
+    "clearAll": "Remove all",
+    "recheck": "Re-check current times",
+    "mayBeStale": "Saved a while ago — departure times may have changed."
   },
   "landing": {
     "heroKicker": "Morocco, honestly answered",

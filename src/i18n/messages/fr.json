@@ -87,6 +87,7 @@
     "fareNote": "Les tarifs sont des fourchettes honnêtes, pas des promesses.",
     "saveMove": "Enregistrer ce trajet",
     "savedMove": "Enregistré",
+    "report": "Signaler un problème",
     "noMoves": "Aucune option fiable pour ce trajet à cette heure. Essayez un point de départ proche, ou consultez la page ville pour les conseils d'arrivée.",
     "showAlternatives": "{count, plural, one {# autre option} other {# autres options}}"
   },
@@ -107,8 +108,16 @@
     "budgetPremium": "Confort",
     "timeNow": "Départ immédiat",
     "pickPlace": "Choisissez un lieu…",
+    "searchPlace": "Cherchez un lieu, une gare ou un quartier…",
     "resultsFor": "Prochains mouvements de {from} à {to}",
-    "departureTime": "Heure de départ"
+    "departureTime": "Heure de départ",
+    "myLocation": "Ma position",
+    "useMyLocation": "Utiliser ma position",
+    "locating": "Localisation…",
+    "locationDenied": "Accès à la position refusé — choisissez votre point de départ manuellement.",
+    "locationFar": "Vous semblez être hors de nos villes couvertes. Choisissez plutôt votre lieu de départ.",
+    "unknownPlaceHint": "Nous ne géolocalisons pas encore les riads et hôtels individuels. Choisissez leur quartier — les notes d'accès vérifiées couvrent l'approche finale.",
+    "noMatches": "Aucune correspondance exacte. Quartiers les plus proches :"
   },
   "plan": {
     "title": "Planifier un trajet",
@@ -130,7 +139,9 @@
     "subtitle": "Stockés sur cet appareil — ils fonctionnent hors ligne.",
     "empty": "Rien d'enregistré pour l'instant. Enregistrez un trajet depuis les résultats et il vous attendra ici, même hors ligne.",
     "savedAt": "Enregistré le {date}",
-    "clearAll": "Tout retirer"
+    "clearAll": "Tout retirer",
+    "recheck": "Revérifier les horaires",
+    "mayBeStale": "Enregistré il y a un moment — les horaires ont pu changer."
   },
   "landing": {
     "heroKicker": "Le Maroc, répondu honnêtement",
