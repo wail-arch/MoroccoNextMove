@@ -1,17 +1,35 @@
 {
   "$comment": "Image slots for AI-generated artwork. Each slot maps to a file in public/images/. Slots set to null render with the design system's pattern/color fallbacks until an image is provided.",
   "slots": {
-    "hero": null,
-    "city-marrakech": null,
-    "city-casablanca": null,
-    "city-rabat": null,
-    "pack-marrakech": null,
-    "og-image": null
+    "hero": "hero.jpg",
+    "city-marrakech": "city-marrakech.jpg",
+    "city-casablanca": "city-casablanca.jpg",
+    "city-rabat": "city-rabat.jpg",
+    "pack-marrakech": "pack-marrakech.jpg",
+    "og-image": "og-image.jpg",
+    "rail-alboraq": "rail-alboraq.jpg",
+    "night-taxi": "night-taxi.jpg",
+    "tram-casablanca": "tram-casablanca.jpg"
+  },
+  "provenance": {
+    "generator": "Higgsfield z_image (text-to-image)",
+    "generatedAt": "2026-06-12",
+    "note": "Editorial location photography per the style guidelines below; full-resolution PNG sources live in asset-sources/. og-image.jpg is a 1200x630 center crop of hero.jpg. tiles/star-*.webp are individual glazed tesserae cut from one photographed sheet (asset-sources/tesserae-sheet-v1.png, alpha via Higgsfield background removal) — used by the landing intro to lay a real zellij wall.",
+    "subjects": {
+      "hero": "Marrakech medina rooftops at dusk, Koutoubia minaret, Atlas mountains (16:9)",
+      "city-marrakech": "Bab Agnaou gate, late afternoon (3:4)",
+      "city-casablanca": "Hassan II Mosque at blue hour over the Atlantic (3:4)",
+      "city-rabat": "Kasbah of the Udayas blue-and-white lane (3:4)",
+      "pack-marrakech": "Lantern-lit medina alley at dusk (3:4)",
+      "rail-alboraq": "Al Boraq high-speed train at a station platform at dawn (16:9)",
+      "night-taxi": "Petit taxi under a street lamp at night (3:4)",
+      "tram-casablanca": "Casablanca tram on a palm-lined boulevard at golden hour (16:9)"
+    }
   },
   "guidelines": {
     "style": "Warm, editorial photography or illustration. Zellige green (#0E5A4E), terracotta (#C4502F), sand (#F1E8D8) palette. No stock-photo clichés, no camels-at-sunset.",
     "hero": "Medina alley with light falling across plaster walls, or a calm overhead of a tiled courtyard.",
     "city-*": "One distinctive, non-obvious visual per city (Marrakech: derb doorway; Casablanca: tram + art deco; Rabat: Oudayas blue-white lane).",
-    "ratio": "hero 16:9, city-* 4:3, og-image 1200x630"
+    "ratio": "hero 16:9, city-* 3:4 portrait cards, og-image 1200x630"
   }
 }

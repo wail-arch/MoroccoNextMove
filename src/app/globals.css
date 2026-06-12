@@ -87,6 +87,11 @@ html {
   html {
     scroll-behavior: auto;
   }
+
+  /* Reduced-motion visitors get the composed hero, no intro overlay. */
+  [data-intro] {
+    display: none;
+  }
 }
 
 body {
@@ -107,4 +112,33 @@ button {
 
 ::selection {
   background: rgba(232, 163, 61, 0.3);
+}
+
+/* Lenis drives smooth scrolling on the landing page; native smooth scrolling
+ * must yield while it is active or anchor jumps animate twice. */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+html.lenis {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+/* Decorative film grain for dark hero/section surfaces (host must be
+ * position:relative). Monochrome SVG noise — no palette colors involved. */
+.grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
+  background-size: 160px 160px;
+  opacity: 0.06;
+  mix-blend-mode: overlay;
 }

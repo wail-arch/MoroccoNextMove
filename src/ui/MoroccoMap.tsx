@@ -69,10 +69,18 @@ function buildMap() {
     return { ...m, x: projected[0], y: projected[1] };
   });
 
-  return { regions, markers };
+  // Launch-corridor route: Marrakech → Casablanca → Rabat, in launch order.
+  const corridor = ["marrakech", "casablanca", "rabat"]
+    .map((slug) => markers.find((m) => m.slug === slug))
+    .filter((m): m is (typeof markers)[number] => Boolean(m));
+  const routeD = corridor
+    .map((m, i) => `${i === 0 ? "M" : "L"} ${m.x.toFixed(1)} ${m.y.toFixed(1)}`)
+    .join(" ");
+
+  return { regions, markers, routeD };
 }
 
-const { regions, markers } = buildMap();
+const { regions, markers, routeD } = buildMap();
 
 const REGION_CLASSES: Record<RegionShape["status"], string> = {
   live: "fill-zellige/85",
@@ -106,6 +114,18 @@ export function MoroccoMap({
           strokeWidth={1.6}
         />
       ))}
+
+      <path
+        data-map-route
+        d={routeD}
+        fill="none"
+        className="stroke-terracotta"
+        strokeWidth={3.5}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeDasharray="2 11"
+        opacity={0.9}
+      />
 
       {markers.map((m) => (
         <g key={m.slug} transform={`translate(${m.x}, ${m.y})`}>
